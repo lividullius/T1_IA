@@ -1,21 +1,10 @@
----
-agent: devin-local
-session: destiny-waitress
-created: 2026-09-22T12:22:17Z
+
 ---
 # T1 IA – Tic-Tac-Toe com ML: Plano de Implementação
 
 Plano completo de implementação do trabalho prático de IA com classificação de estados do jogo da velha usando 5 algoritmos de ML, pré-processamento em 2 abordagens e frontend de jogo.
 
 ---
-
-## Contexto e estado atual
-
-### O que já foi feito
-- Dataset UCI baixado (`dataset/raw/tic-tac-toe.data`, `tic-tac-toe.names`)
-- Script de exploração do dataset (`dataset/explorar_dataset.py`)
-- Relatório de análise do dataset (`relatorio/entendendo-o-dataset.md`)
-- Estrutura de pastas criada: `modelos/arvore`, `modelos/knn`, `modelos/mlp`, `modelos/livre1`, `modelos/livre2`, `frontend/`, `relatorio/`
 
 ### Resumo do dataset original
 - 958 instâncias, sem valores faltantes, sem duplicatas
@@ -29,12 +18,12 @@ Plano completo de implementação do trabalho prático de IA com classificação
 
 | Passo | Descrição | Status |
 |---|---|---|
-| 1 | Objetivo: classificar em 4 estados | Entendido |
-| 2 | Dataset: análise e adequação | Parcialmente feito (análise) |
-| 3 | Pré-processamento (2 abordagens) | A fazer |
-| 4 | Divisão treino/validação/teste | A fazer |
-| 5 | 5 algoritmos classificadores | A fazer |
-| 6 | Frontend mínimo | A fazer |
+| 1 | Objetivo: classificar em 4 estados | 
+| 2 | Dataset: análise e adequação | 
+| 3 | Pré-processamento (2 abordagens) |
+| 4 | Divisão treino/validação/teste |
+| 5 | 5 algoritmos classificadores | 
+| 6 | Frontend mínimo | 
 
 ---
 
@@ -132,76 +121,4 @@ Frontend **console-based** com:
 
 ---
 
-## Estrutura de Arquivos (resultado final)
 
-```
-T1_IA/
-├── dataset/
-│   ├── raw/                        (já existe)
-│   ├── processed/
-│   │   ├── dataset_completo.csv
-│   │   ├── ab1_treino.csv
-│   │   ├── ab1_validacao.csv
-│   │   ├── ab1_teste.csv
-│   │   ├── ab2_treino.csv
-│   │   ├── ab2_validacao.csv
-│   │   └── ab2_teste.csv
-│   ├── explorar_dataset.py         (já existe)
-│   ├── construir_dataset.py        (novo)
-│   ├── preprocessamento.py         (novo)
-│   └── dividir_dataset.py          (novo)
-├── modelos/
-│   ├── knn/knn.py
-│   ├── mlp/mlp.py
-│   ├── arvore/arvore.py
-│   ├── livre1/svm.py
-│   ├── livre2/rf.py
-│   └── comparar.py
-├── frontend/
-│   └── jogo.py
-└── relatorio/
-    ├── entendendo-o-dataset.md     (já existe)
-    └── ...
-```
-
----
-
-## Ordem de Implementação
-
-1. `dataset/construir_dataset.py` — gerar 4 classes balanceadas (~200 por classe)
-2. `dataset/preprocessamento.py` — codificar ambas as abordagens
-3. `dataset/dividir_dataset.py` — split 60/20/20 estratificado
-4. `modelos/arvore/arvore.py` — modelo interpretável, bom ponto de partida
-5. `modelos/knn/knn.py`
-6. `modelos/mlp/mlp.py`
-7. `modelos/livre1/svm.py`
-8. `modelos/livre2/rf.py`
-9. `modelos/comparar.py` — comparação e gráficos
-10. `frontend/jogo.py` — frontend com melhor modelo integrado
-
----
-
-## Pontuação e Critérios
-
-| Item | Pontos |
-|---|---|
-| Dataset (documentado) | 1,0 |
-| 5 soluções de IA (1,0 por algoritmo) | 5,0 |
-| Frontend | 1,0 |
-| Relatório PPT | 1,5 |
-| Vídeo (máx. 10 min, todos falam) | 1,5 |
-| **Total** | **10,0** |
-
----
-
-## Observações Críticas
-
-- Dataset balanceado: ~200 instâncias por classe (800 total)
-- Mesmo split de dados para todos os algoritmos
-- Evitar overfitting — justificar parâmetros no relatório
-- Registrar acertos/erros da IA no frontend
-- MLP: documentar topologia usada
-- Dois modelos livres (SVM e Random Forest): incluir explicação de como funcionam
-- Relatório no formato PPT
-- Vídeo de até 10 min com todos os integrantes presentes e falando
-- Indicar quais ferramentas de IA foram usadas no relatório
