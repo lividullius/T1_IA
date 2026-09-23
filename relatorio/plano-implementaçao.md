@@ -20,8 +20,8 @@ Plano completo de implementação do trabalho prático de IA com classificação
 |---|---|---|
 | 1 | Objetivo: classificar em 4 estados | 
 | 2 | Dataset: análise e adequação | 
-| 3 | Pré-processamento (2 abordagens) |
-| 4 | Divisão treino/validação/teste |
+| 3 | Pré-processamento (2 abordagens) | 
+| 4 | Divisão treino/validação/teste | Feito (`dataset/dividir_dataset.py`) 
 | 5 | 5 algoritmos classificadores | 
 | 6 | Frontend mínimo | 
 
@@ -64,10 +64,34 @@ Codificação das 9 células do tabuleiro:
 - `casas_vazias` — número de casas com `b`
 - `vez` — jogador da vez (1=X, 0=O)
 
-#### 2.4 — Divisão do dataset (arquivo: `dataset/dividir_dataset.py`)
+#### Passo 4 — Divisão do dataset (arquivo: `dataset/dividir_dataset.py`)
 
-- **Split físico estratificado: 60% treino / 20% validação / 20% teste**
-- Os mesmos splits são usados por todos os 5 algoritmos
+**Entrada**: `dataset/processed/dataset_4classes.csv` (800 linhas geradas pelo
+`construir_dataset.py`, colunas do tabuleiro + `classe` + `origem`).
+
+**Ordem das operações**: dividir primeiro o tabuleiro bruto em
+treino/validação/teste, e só depois aplicar as codificações da abordagem 1
+(2.2) e abordagem 2 (2.3) sobre cada partição. Isso garante que os mesmos
+800 tabuleiros (e a mesma composição de treino/validação/teste) sejam usados
+nas duas abordagens — senão a comparação entre abordagens no passo 5 fica
+inválida (cada uma teria visto exemplos diferentes).
+
+- **Split estratificado por `classe`: 60% treino / 20% validação / 20% teste**
+  (120/40/40 por classe, já que são 200 amostras cada)
+- **Seed fixa (mesma do `construir_dataset.py`, 42)** para reprodutibilidade
+- **Cuidado com vazamento de dados na classe "Empate"**: como só existem 16
+  tabuleiros de empate únicos (ver `entendendo-o-dataset.md`), as 200 linhas
+  dessa classe são 184 duplicatas exatas dos mesmos 16 tabuleiros. Um split
+  aleatório ingênuo por linha pode colocar cópias do **mesmo tabuleiro** em
+  treino e teste ao mesmo tempo, inflando artificialmente a acurácia nessa
+  classe. Solução: fazer o split por **grupo** (agrupando por tabuleiro
+  único, não por linha) para a classe "Empate" — todas as cópias de um
+  mesmo tabuleiro caem inteiramente em treino, validação **ou** teste, nunca
+  espalhadas entre partições. As outras 3 classes não têm esse problema
+  (linhas já são tabuleiros distintos) e podem usar split estratificado
+  normal.
+- Os mesmos splits (mesmos índices de linha) são usados por todos os 5
+  algoritmos e pelas duas abordagens de pré-processamento
 - Salvar como CSV em `dataset/processed/`:
   - `ab1_treino.csv`, `ab1_validacao.csv`, `ab1_teste.csv`
   - `ab2_treino.csv`, `ab2_validacao.csv`, `ab2_teste.csv`

@@ -48,3 +48,30 @@ O dataset original tem apenas 2 classes, mas precisamos de 4:
 | Tem jogo | Não existe no dataset (só contém endgames) | **0** → gerar sinteticamente |
 
 As classes "Empate" e "Tem jogo" precisarão ser geradas no passo de construção do dataset (`dataset/construir_dataset.py`).
+
+## Descoberta: só existem 16 empates possíveis no total
+
+Ao implementar a geração de "Empate" por força bruta, verificamos que **16 é o
+total de tabuleiros completos (9 casas, 5 X / 4 O) sem vencedor
+matematicamente possíveis** no jogo da velha — não é uma limitação do
+dataset UCI, é o universo combinatório inteiro. Confirmado de duas formas:
+
+1. Enumeração por força bruta de todas as `C(9,5) = 126` formas de
+   distribuir 5 X's e 4 O's no tabuleiro, filtrando as que não têm
+   3-em-linha para nenhum jogador → sempre 16.
+2. Aplicando as 8 simetrias do tabuleiro (rotações/reflexões) sobre esses
+   16 tabuleiros, o conjunto resultante continua tendo 16 elementos — ou
+   seja, esse grupo de tabuleiros já é fechado sob simetria, não gera
+   variantes novas.
+
+**Decisão**: a classe "Empate" é completada até 200 amostras por
+**oversampling** (reamostragem com reposição) dos 16 tabuleiros reais, em
+vez de gerar tabuleiros novos (que não existem). Isso é registrado na
+coluna `origem` do dataset gerado (`oversample_16_reais`), para
+transparência e para possível discussão no relatório sobre o efeito da
+duplicação nessa classe durante treino/avaliação.
+
+Já a classe "Tem jogo" tem um universo bem maior (4297 tabuleiros válidos
+com 1 a 7 peças, sem vencedor ainda, respeitando a regra de turnos), então
+foi possível amostrar 200 tabuleiros únicos sem repetição, distribuídos de
+forma estratificada entre as quantidades de peças jogadas.
