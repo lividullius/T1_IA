@@ -16,14 +16,14 @@ Plano completo de implementação do trabalho prático de IA com classificação
 
 ## Passos do Enunciado
 
-| Passo | Descrição | Status |
+| Passo | Descrição 
 |---|---|---|
-| 1 | Objetivo: classificar em 4 estados | 
-| 2 | Dataset: análise e adequação | 
-| 3 | Pré-processamento (2 abordagens) | 
-| 4 | Divisão treino/validação/teste | Feito (`dataset/dividir_dataset.py`) 
-| 5 | 5 algoritmos classificadores | 
-| 6 | Frontend mínimo | 
+| 1 | Objetivo: classificar em 4 estados 
+| 2 | Dataset: análise e adequação 
+| 3 | Pré-processamento (2 abordagens)  
+| 4 | Divisão treino/validação/teste 
+| 5 | 5 algoritmos classificadores 
+| 6 | Frontend mínimo 
 
 ---
 
