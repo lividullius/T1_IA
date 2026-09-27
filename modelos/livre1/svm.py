@@ -1,13 +1,13 @@
 import pandas as pd
 from joblib import dump, load
 from pathlib import Path
-from sklearn.preprocessing import StandardScaler
-from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "dataset" / "processed"
-MODEL_PATH = BASE_DIR / "modelos" / "mlp" / "modelo_ab2.joblib"
+MODEL_PATH = BASE_DIR / "modelos" / "livre1" / "modelo_ab2.joblib"
 FEATURES_AB2 = [
 	"qtd_x", "qtd_o", "pos_ocupadas", "linhas_2x", "linhas_2o",
 	"casas_vazias", "vez",
@@ -24,9 +24,9 @@ FEATURES_AB2 = [
 #     xTemporario, yTemporario, test_size=0.5, random_state=42,
 #     stratify=yTemporario
 # )
-# Depois, o scaler era ajustado sobre essa divisao unica.
-# Agora cada abordagem (ab1 e ab2) tem treino, validacao e teste proprios,
-# e o scaler continua sendo ajustado somente no conjunto de treino.
+# A abordagem nova substitui o dataset antigo pelos CSVs processados de ab1
+# e ab2, mas mantem a normalizacao: fit_transform no treino e transform nos
+# conjuntos de validacao e teste.
 
 
 def carregar_dados(abordagem):
@@ -61,6 +61,29 @@ def inferir(features):
 	return pacote["modelo"].predict(entrada)[0]
 
 
+# Teste dos valores de C
+# C=10 e C=100 tiveram a mesma acuracia.
+# Foi escolhido C=10 por obter o mesmo resultado com menor penalizacao.
+
+#for valorC in [0.1, 1, 10, 100]:
+#    modelo = SVC(kernel="rbf", C=valorC, random_state=42)
+#    modelo.fit(xTreino, yTreino)
+#    previsoes = modelo.predict(xValidacao)
+#    acuracia = accuracy_score(yValidacao, previsoes)
+#    print("C:", valorC, "Acurácia:", acuracia)
+
+# Teste dos kernels
+# O kernel RBF apresentou 93,18% e o linear 68,18%.
+# Por isso foi escolhido o kernel RBF.
+
+#for kernel in ["linear", "rbf"]:
+#    modelo = SVC(kernel=kernel, C=10, random_state=42)
+#    modelo.fit(xTreino, yTreino)
+#    previsoes = modelo.predict(xValidacao)
+#    acuracia = accuracy_score(yValidacao, previsoes)
+#    print("Kernel:", kernel, "Acurácia:", acuracia)
+
+
 def main():
 	for abordagem in ("ab1", "ab2"):
 		xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
@@ -69,18 +92,15 @@ def main():
 		xValidacao = normalizador_X.transform(xValidacao)
 		xTeste = normalizador_X.transform(xTeste)
 
-		mlp = MLPClassifier(
-			hidden_layer_sizes=(20,), activation="logistic", solver="adam",
-			learning_rate_init=0.001, max_iter=3000, random_state=42,
-		)
-		mlp.fit(xTreino, yTreino)
+		modelo = SVC(kernel="rbf", C=10, random_state=42)
+		modelo.fit(xTreino, yTreino)
 
 		print(f"\nAbordagem: {abordagem}")
 		for nome, features, classes in (
 			("Validação", xValidacao, yValidacao),
 			("Teste", xTeste, yTeste),
 		):
-			previsoes = mlp.predict(features)
+			previsoes = modelo.predict(features)
 			print(f"{nome}:")
 			print("Acurácia:", accuracy_score(classes, previsoes))
 			print("Precisão:", precision_score(classes, previsoes, average="weighted"))
@@ -88,7 +108,7 @@ def main():
 			print("F-measure:", f1_score(classes, previsoes, average="weighted"))
 
 		if abordagem == "ab2":
-			exportar_modelo(mlp, normalizador_X)
+			exportar_modelo(modelo, normalizador_X)
 
 
 if __name__ == "__main__":
