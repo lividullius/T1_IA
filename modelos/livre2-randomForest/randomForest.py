@@ -1,18 +1,36 @@
 import pandas as pd
+from pathlib import Path
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
+BASE_DIR = Path(__file__).resolve().parents[2]
+DATA_DIR = BASE_DIR / "dataset" / "processed"
 
-print(dados.shape)
-print(dados.head())
+# Abordagem anterior, mantida como referência:
+# dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
+# X = dados.drop(columns="Resultado")
+# Y = dados["Resultado"].values
+# xTreino, xTemporario, yTreino, yTemporario = train_test_split(
+#     X, Y, test_size=0.2, random_state=42, stratify=Y
+# )
+# xTeste, xValidacao, yTeste, yValidacao = train_test_split(
+#     xTemporario, yTemporario, test_size=0.5, random_state=42,
+#     stratify=yTemporario
+# )
+# A abordagem atual usa as particoes geradas pelo preprocessing e executa
+# o Random Forest para as duas representacoes, ab1 e ab2.
 
-X = dados.drop(columns=("Resultado"))
-Y = dados["Resultado"].values
 
-xTreino, xTemporario, yTreino, yTemporario = train_test_split(X, Y, test_size=0.2, random_state=42, stratify=Y)
-xTeste, xValidacao, yTeste, yValidacao = train_test_split(xTemporario, yTemporario, test_size=0.5, random_state=42, stratify=yTemporario)
+def carregar_dados(abordagem):
+    treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
+    validacao = pd.read_csv(DATA_DIR / f"{abordagem}_validacao.csv")
+    teste = pd.read_csv(DATA_DIR / f"{abordagem}_teste.csv")
+
+    return (
+        treino.drop(columns="classe"), treino["classe"],
+        validacao.drop(columns="classe"), validacao["classe"],
+        teste.drop(columns="classe"), teste["classe"],
+    )
 
 # Teste da quantidade de árvores
 #melhorAcuracia = 0
@@ -89,41 +107,23 @@ xTeste, xValidacao, yTeste, yValidacao = train_test_split(xTemporario, yTemporar
 #print("Melhor acurácia:", melhorAcuracia)
 
 
-# Modelo final com os melhores parâmetros
-modelo = RandomForestClassifier(
-    n_estimators=100,
-    max_depth=10,
-    min_samples_leaf=1,
-    random_state=42
-)
+for abordagem in ("ab1", "ab2"):
+    print(f"\nIniciando Treino RandomForest - Abordagem: {abordagem}")
+    xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
 
-modelo.fit(xTreino, yTreino)
+    modelo = RandomForestClassifier(
+        n_estimators=100, max_depth=10, min_samples_leaf=1, random_state=42,
+    )
+    modelo.fit(xTreino, yTreino)
 
-# Resultados da validação
-previsoes = modelo.predict(xValidacao)
-
-acuracia = accuracy_score(yValidacao, previsoes)
-precisao = precision_score(yValidacao, previsoes, average="weighted")
-recall = recall_score(yValidacao, previsoes, average="weighted")
-f1 = f1_score(yValidacao, previsoes, average="weighted")
-
-print("\nResultados da validação:")
-print("Acurácia:", acuracia)
-print("Precisão:", precisao)
-print("Recall:", recall)
-print("F-measure:", f1)
-
-
-# Resultados do teste final
-previsoesTeste = modelo.predict(xTeste)
-
-acuraciaTeste = accuracy_score(yTeste, previsoesTeste)
-precisaoTeste = precision_score(yTeste, previsoesTeste, average="weighted")
-recallTeste = recall_score(yTeste, previsoesTeste, average="weighted")
-f1Teste = f1_score(yTeste, previsoesTeste, average="weighted")
-
-print("\nResultados do teste final:")
-print("Acurácia:", acuraciaTeste)
-print("Precisão:", precisaoTeste)
-print("Recall:", recallTeste)
-print("F-measure:", f1Teste)
+    print(f"\nAbordagem: {abordagem}")
+    for nome, features, classes in (
+        ("Validação", xValidacao, yValidacao),
+        ("Teste", xTeste, yTeste),
+    ):
+        previsoes = modelo.predict(features)
+        print(f"{nome}:")
+        print("Acurácia:", accuracy_score(classes, previsoes))
+        print("Precisão:", precision_score(classes, previsoes, average="weighted"))
+        print("Recall:", recall_score(classes, previsoes, average="weighted"))
+        print("F-measure:", f1_score(classes, previsoes, average="weighted"))
