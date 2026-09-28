@@ -1,0 +1,53 @@
+SVM (Support Vector Machine, SVC) - abordagem livre 1
+========================================================
+
+Como funciona
+-------------
+O SVM busca o hiperplano que separa as classes com a maior margem
+possivel entre os pontos mais proximos de cada classe (os "vetores de
+suporte"). Quando as classes nao sao linearmente separaveis no espaco
+original, um kernel projeta os dados para um espaco de maior dimensao
+onde a separacao linear se torna possivel; aqui foram comparados o
+kernel linear e o kernel RBF (funcao de base radial), que mede
+similaridade entre pontos com base na distancia gaussiana. O
+hiperparametro C controla o quanto o modelo penaliza classificacoes
+erradas no treino: valores altos de C forcam uma margem mais estreita
+(menos erros de treino, mais risco de overfitting); valores baixos
+permitem mais erros de treino em troca de uma margem maior. Como o
+problema tem 4 classes, o scikit-learn usa a estrategia one-vs-one
+internamente.
+
+Pre-processamento necessario
+-----------------------------
+Sim: foi aplicado StandardScaler (normalizacao z-score, media 0 e
+desvio padrao 1) em todas as features, pois o SVM (especialmente com
+kernel RBF) depende de distancias/produtos internos entre os pontos, e
+features em escalas muito diferentes dominariam esse calculo. O scaler
+é ajustado (fit) somente no conjunto de treino e depois aplicado
+(transform) em validacao e teste, para evitar vazamento de informacao
+das particoes de avaliacao no ajuste do normalizador.
+
+Ajuste de hiperparametro (tuning)
+-----------------------------------
+Hiperparametros ajustados: kernel (linear ou rbf) e C (0.1, 1, 10, 100),
+em uma busca em grade combinando as duas dimensoes (8 combinacoes). Cada
+combinacao e treinada no conjunto de treino normalizado e avaliada pela
+acuracia no conjunto de validacao. A funcao main() em svm.py imprime o
+top 3 de combinacoes e a escolhida; em caso de empate na acuracia, e
+priorizado o menor C (menor penalizacao / modelo mais simples).
+
+Resultado observado (rodando main()):
+- Abordagem ab1:
+    1) kernel=rbf, C=10   acuracia=0.7197
+    2) kernel=rbf, C=100  acuracia=0.7070
+    3) kernel=rbf, C=0.1  acuracia=0.5796
+    Escolhido: kernel=rbf, C=10
+- Abordagem ab2:
+    1) kernel=rbf, C=1    acuracia=0.9299
+    2) kernel=rbf, C=10   acuracia=0.9299
+    3) kernel=rbf, C=100  acuracia=0.9299
+    Escolhido: kernel=rbf, C=1 (empate; menor C = menor penalizacao)
+
+Em ambas as abordagens o kernel RBF superou o linear, confirmando que a
+fronteira entre as classes do jogo da velha nao e linearmente separavel
+nas features usadas.

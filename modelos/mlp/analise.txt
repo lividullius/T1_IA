@@ -1,0 +1,57 @@
+MLP (Multi-Layer Perceptron, MLPClassifier)
+==============================================
+
+Como funciona
+-------------
+O MLP e uma rede neural feedforward totalmente conectada. Os dados de
+entrada passam por uma ou mais camadas ocultas de neuronios, cada um
+aplicando uma soma ponderada das entradas seguida de uma funcao de
+ativacao (aqui, "logistic", a sigmoide), ate chegar a camada de saida,
+que produz a probabilidade de cada uma das 4 classes. Os pesos da rede
+sao ajustados iterativamente por backpropagation usando o otimizador
+Adam, que adapta a taxa de aprendizado de cada peso durante o
+treinamento com base em estimativas de momentos do gradiente. O
+treinamento roda ate convergir ou atingir max_iter (3000) epocas.
+
+Pre-processamento necessario
+-----------------------------
+Sim: foi aplicado StandardScaler (normalizacao z-score) em todas as
+features antes do treino. Redes neurais treinadas por gradiente
+descendente convergem melhor e de forma mais estavel quando as entradas
+tem media 0 e variancia 1, pois isso evita que features com escalas
+maiores dominem os gradientes e ajuda a funcao de ativacao sigmoide a
+operar na regiao de maior sensibilidade. Assim como no SVM, o scaler e
+ajustado apenas no conjunto de treino e reaplicado (transform) em
+validacao e teste.
+
+Ajuste de hiperparametro (tuning)
+-----------------------------------
+Antes, a arquitetura era fixa (uma camada oculta de 20 neuronios,
+learning_rate_init=0.001), sem nenhuma comparacao. Agora sao ajustados
+dois hiperparametros: hidden_layer_sizes (uma camada oculta com 10, 20
+ou 50 neuronios) e learning_rate_init (0.001 ou 0.01), em uma busca em
+grade combinando as duas dimensoes (6 combinacoes por abordagem). Cada
+combinacao e treinada no conjunto de treino normalizado e avaliada pela
+acuracia no conjunto de validacao. A funcao main() em mlp.py imprime o
+top 3 de combinacoes e a escolhida.
+
+Resultado observado (rodando main()):
+- Abordagem ab1:
+    1) hidden_layer_sizes=(20,), learning_rate_init=0.01   acuracia=0.5987
+    2) hidden_layer_sizes=(50,), learning_rate_init=0.001  acuracia=0.5860
+    3) hidden_layer_sizes=(20,), learning_rate_init=0.001  acuracia=0.5732
+    Escolhido: hidden_layer_sizes=(20,), learning_rate_init=0.01
+- Abordagem ab2:
+    1) hidden_layer_sizes=(10,), learning_rate_init=0.01  acuracia=0.9299
+    2) hidden_layer_sizes=(20,), learning_rate_init=0.01  acuracia=0.9299
+    3) hidden_layer_sizes=(50,), learning_rate_init=0.01  acuracia=0.9299
+    Escolhido: hidden_layer_sizes=(10,), learning_rate_init=0.01 (empate)
+
+Em ab2 o tamanho da camada oculta pouco importou (10, 20 ou 50 neuronios
+deram a mesma acuracia), o que reforca que as 7 features derivadas ja
+tornam o problema quase linearmente separavel em relacao as classes; a
+taxa de aprendizado maior (0.01) converge para uma solucao boa mais
+rapido que 0.001 dentro do limite de 3000 iteracoes. Em ab1 o desempenho
+e bem inferior, mostrando que a rede tem mais dificuldade em extrair,
+diretamente das 9 casas do tabuleiro, os mesmos padroes que ja vem
+prontos nas features de ab2.

@@ -1,0 +1,51 @@
+Random Forest (RandomForestClassifier) - abordagem livre 2
+==============================================================
+
+Como funciona
+-------------
+O Random Forest e um ensemble de varias arvores de decisao. Cada arvore
+e treinada em uma amostra bootstrap (com reposicao) do conjunto de
+treino, e a cada divisao (split) apenas um subconjunto aleatorio das
+features e considerado como candidato, o que decorrelaciona as arvores
+entre si. A predicao final para um exemplo novo e obtida por votacao
+majoritaria entre todas as arvores da floresta. Isso reduz a variancia
+em relacao a uma unica arvore de decisao (que tende a ter overfitting),
+mantendo boa capacidade de capturar relacoes nao lineares entre as
+features.
+
+Pre-processamento necessario
+-----------------------------
+Nenhuma normalizacao ou escalonamento foi aplicado, pelo mesmo motivo
+que na arvore de decisao isolada: modelos baseados em arvore comparam
+uma feature por vez contra um limiar, entao a escala absoluta dos
+valores nao influencia as divisoes nem a acuracia final.
+
+Ajuste de hiperparametro (tuning)
+-----------------------------------
+Hiperparametros ajustados: n_estimators (numero de arvores: 10, 25, 50,
+100, 150, 200), max_depth (profundidade maxima: 3, 5, 7, 10, None) e
+min_samples_leaf (minimo de amostras por folha: 1, 2, 4), em uma busca
+em grade combinando as tres dimensoes (90 combinacoes por abordagem).
+Cada combinacao e treinada no conjunto de treino e avaliada pela
+acuracia no conjunto de validacao. A funcao main() em randomForest.py
+imprime o top 3 de combinacoes e a escolhida (maior acuracia; em empate,
+a primeira encontrada na ordem dos loops).
+
+Resultado observado (rodando main()):
+- Abordagem ab1:
+    1) n_estimators=200, max_depth=10,   min_samples_leaf=2  acuracia=0.7834
+    2) n_estimators=200, max_depth=None, min_samples_leaf=2  acuracia=0.7834
+    3) n_estimators=150, max_depth=7,    min_samples_leaf=2  acuracia=0.7707
+    Escolhido: n_estimators=200, max_depth=10, min_samples_leaf=2
+- Abordagem ab2:
+    1) n_estimators=10, max_depth=7,  min_samples_leaf=1  acuracia=0.9299
+    2) n_estimators=10, max_depth=7,  min_samples_leaf=2  acuracia=0.9299
+    3) n_estimators=10, max_depth=10, min_samples_leaf=1  acuracia=0.9299
+    Escolhido: n_estimators=10, max_depth=7, min_samples_leaf=1 
+
+Em ab2 varias combinacoes empatam na mesma acuracia maxima, inclusive com
+poucas arvores (10) e pouca profundidade (7), o que indica que as 7
+features derivadas ja separam bem as classes e o problema nao exige um
+modelo muito complexo nessa representacao. Em ab1 (9 features brutas)
+sao necessarias mais arvores e maior profundidade para um desempenho
+razoavel, e ainda assim a acuracia fica bem abaixo da obtida em ab2.

@@ -12,21 +12,6 @@ FEATURES_AB2 = [
     "casas_vazias", "vez",
 ]
 
-# Abordagem anterior, mantida como referência:
-# dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
-# X = dados.drop(columns="Resultado")
-# Y = dados["Resultado"].values
-# xTreino, xTemporario, yTreino, yTemporario = train_test_split(
-#     X, Y, test_size=0.2, random_state=42, stratify=Y
-# )
-# xTeste, xValidacao, yTeste, yValidacao = train_test_split(
-#     xTemporario, yTemporario, test_size=0.5, random_state=42,
-#     stratify=yTemporario
-# )
-# O fluxo novo nao divide os dados novamente: ele usa as particoes prontas
-# e executa o mesmo modelo separadamente para ab1 e ab2.
-
-
 def carregar_dados(abordagem):
     treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
     validacao = pd.read_csv(DATA_DIR / f"{abordagem}_validacao.csv")
@@ -58,9 +43,8 @@ def inferir(features):
 def main():
     for abordagem in ("ab1", "ab2"):
         xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
-        melhorAcuracia = 0
-        melhorProfundidade = 0
 
+        resultados = []
         for profundidade in range(1, 11):
             modelo = DecisionTreeClassifier(
                 criterion="gini", max_depth=profundidade, random_state=42,
@@ -68,17 +52,22 @@ def main():
             modelo.fit(xTreino, yTreino)
             previsoes = modelo.predict(xValidacao)
             acuracia = accuracy_score(yValidacao, previsoes)
+            resultados.append((profundidade, acuracia))
 
-            if acuracia > melhorAcuracia:
-                melhorAcuracia = acuracia
-                melhorProfundidade = profundidade
+        resultados.sort(key=lambda r: r[1], reverse=True)
+        melhorProfundidade, melhorAcuracia = resultados[0]
+
+        print(f"\nAbordagem: {abordagem}")
+        print("Busca de hiperparâmetro (max_depth) - top 3:")
+        for profundidade, acuracia in resultados[:3]:
+            print(f"  max_depth={profundidade}: acurácia={acuracia:.4f}")
+        print(f"Escolhido: max_depth={melhorProfundidade} (acurácia={melhorAcuracia:.4f})")
 
         modelo = DecisionTreeClassifier(
             criterion="gini", max_depth=melhorProfundidade, random_state=42,
         )
         modelo.fit(xTreino, yTreino)
 
-        print(f"\nAbordagem: {abordagem}")
         for nome, features, classes in (
             ("Validação", xValidacao, yValidacao),
             ("Teste", xTeste, yTeste),
