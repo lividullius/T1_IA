@@ -13,22 +13,6 @@ FEATURES_AB2 = [
 	"casas_vazias", "vez",
 ]
 
-# Abordagem anterior, mantida como referência:
-# dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
-# X = dados.drop(columns="Resultado")
-# Y = dados["Resultado"].values
-# xTreino, xTemporario, yTreino, yTemporario = train_test_split(
-#     X, Y, test_size=0.2, random_state=42, stratify=Y
-# )
-# xTeste, xValidacao, yTeste, yValidacao = train_test_split(
-#     xTemporario, yTemporario, test_size=0.5, random_state=42,
-#     stratify=yTemporario
-# )
-# A abordagem nova substitui o dataset antigo pelos CSVs processados de ab1
-# e ab2, mas mantem a normalizacao: fit_transform no treino e transform nos
-# conjuntos de validacao e teste.
-
-
 def carregar_dados(abordagem):
 	treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
 	validacao = pd.read_csv(DATA_DIR / f"{abordagem}_validacao.csv")
@@ -61,29 +45,6 @@ def inferir(features):
 	return pacote["modelo"].predict(entrada)[0]
 
 
-# Teste dos valores de C
-# C=10 e C=100 tiveram a mesma acuracia.
-# Foi escolhido C=10 por obter o mesmo resultado com menor penalizacao.
-
-#for valorC in [0.1, 1, 10, 100]:
-#    modelo = SVC(kernel="rbf", C=valorC, random_state=42)
-#    modelo.fit(xTreino, yTreino)
-#    previsoes = modelo.predict(xValidacao)
-#    acuracia = accuracy_score(yValidacao, previsoes)
-#    print("C:", valorC, "Acurácia:", acuracia)
-
-# Teste dos kernels
-# O kernel RBF apresentou 93,18% e o linear 68,18%.
-# Por isso foi escolhido o kernel RBF.
-
-#for kernel in ["linear", "rbf"]:
-#    modelo = SVC(kernel=kernel, C=10, random_state=42)
-#    modelo.fit(xTreino, yTreino)
-#    previsoes = modelo.predict(xValidacao)
-#    acuracia = accuracy_score(yValidacao, previsoes)
-#    print("Kernel:", kernel, "Acurácia:", acuracia)
-
-
 def main():
 	for abordagem in ("ab1", "ab2"):
 		xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
@@ -92,10 +53,28 @@ def main():
 		xValidacao = normalizador_X.transform(xValidacao)
 		xTeste = normalizador_X.transform(xTeste)
 
-		modelo = SVC(kernel="rbf", C=10, random_state=42)
-		modelo.fit(xTreino, yTreino)
+		resultados = []
+		for kernel in ["linear", "rbf"]:
+			for valorC in [0.1, 1, 10, 100]:
+				modelo = SVC(kernel=kernel, C=valorC, random_state=42)
+				modelo.fit(xTreino, yTreino)
+				previsoes = modelo.predict(xValidacao)
+				acuracia = accuracy_score(yValidacao, previsoes)
+				resultados.append((kernel, valorC, acuracia))
+
+		# Em empate de acurácia, prefere-se o menor C (menor penalização).
+		resultados.sort(key=lambda r: (-r[2], r[1]))
+		melhorKernel, melhorC, melhorAcuracia = resultados[0]
 
 		print(f"\nAbordagem: {abordagem}")
+		print("Busca de hiperparâmetro (kernel, C) - top 3:")
+		for kernel, valorC, acuracia in resultados[:3]:
+			print(f"  kernel={kernel}, C={valorC}: acurácia={acuracia:.4f}")
+		print(f"Escolhido: kernel={melhorKernel}, C={melhorC} (acurácia={melhorAcuracia:.4f})")
+
+		modelo = SVC(kernel=melhorKernel, C=melhorC, random_state=42)
+		modelo.fit(xTreino, yTreino)
+
 		for nome, features, classes in (
 			("Validação", xValidacao, yValidacao),
 			("Teste", xTeste, yTeste),

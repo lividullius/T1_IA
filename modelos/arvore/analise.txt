@@ -1,0 +1,46 @@
+Arvore de Decisao (DecisionTreeClassifier)
+===========================================
+
+Como funciona
+-------------
+A arvore de decisao classifica um exemplo fazendo perguntas sequenciais
+sobre os valores das features, formando uma sequencia de decisoes binarias
+(cada no interno testa "feature <= limiar?") ate chegar numa folha, que
+contem a classe prevista. A cada no, o algoritmo escolhe a feature e o
+limiar que mais reduzem a impureza dos subconjuntos resultantes; aqui foi
+usado o criterio "gini", que mede a probabilidade de classificar errado um
+exemplo escolhido ao acaso do no caso ele recebesse a classe majoritaria
+daquele no. A arvore cresce recursivamente ate atingir a profundidade
+maxima definida ou ate os nos ficarem puros.
+
+Pre-processamento necessario
+-----------------------------
+Nenhuma normalizacao ou escalonamento foi aplicado. Arvores de decisao
+comparam uma feature de cada vez contra um limiar, entao a escala absoluta
+dos valores (ex.: -1/0/1 na abordagem 1, ou contagens pequenas na
+abordagem 2) nao afeta as divisoes escolhidas nem a acuracia do modelo.
+Os dados usados sao exatamente os CSVs ja divididos em treino/validacao/
+teste por dataset/dividir_dataset.py.
+
+Ajuste de hiperparametro (tuning)
+-----------------------------------
+Hiperparametro ajustado: max_depth (profundidade maxima da arvore).
+Metodo: busca em grade simples, testando profundidade de 1 a 10, treinando
+no conjunto de treino e avaliando a acuracia no conjunto de validacao.
+
+Resultado observado (rodando main()):
+- Abordagem ab1 (9 features, uma por casa do tabuleiro):
+    1) max_depth=10  acuracia=0.5669
+    2) max_depth=8   acuracia=0.5605
+    3) max_depth=7   acuracia=0.5350
+    Escolhido: max_depth=10
+- Abordagem ab2 (7 features derivadas):
+    1) max_depth=8   acuracia=0.9299
+    2) max_depth=9   acuracia=0.9299
+    3) max_depth=10  acuracia=0.9299
+    Escolhido: max_depth=8
+
+A abordagem ab2 (features derivadas como contagem de pecas e linhas com
+duas pecas do mesmo jogador) produz uma acuracia muito maior do que ab1,
+o que sugere que essas features resumem melhor o estado relevante do
+tabuleiro para esse problema do que as 9 casas brutas.

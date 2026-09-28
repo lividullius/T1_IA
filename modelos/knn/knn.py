@@ -12,22 +12,6 @@ FEATURES_AB2 = [
 	"casas_vazias", "vez",
 ]
 
-# Abordagem anterior, mantida como referência:
-# dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
-# X = dados.drop(columns="Resultado")
-# Y = dados["Resultado"].values
-# xTreino, xTemporario, yTreino, yTemporario = train_test_split(
-#     X, Y, test_size=0.2, random_state=42, stratify=Y
-# )
-# xTeste, xValidacao, yTeste, yValidacao = train_test_split(
-#     xTemporario, yTemporario, test_size=0.5, random_state=42,
-#     stratify=yTemporario
-# )
-# Essa abordagem usava um dataset antigo, tres classes e uma divisao nova.
-# A abordagem atual carrega os seis CSVs ja divididos pelo preprocessing,
-# permitindo comparar ab1 e ab2 com exatamente as mesmas particoes.
-
-
 def carregar_dados(abordagem):
 	treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
 	validacao = pd.read_csv(DATA_DIR / f"{abordagem}_validacao.csv")
@@ -59,10 +43,27 @@ def inferir(features):
 def main():
 	for abordagem in ("ab1", "ab2"):
 		xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
-		modelo = neighbors.KNeighborsClassifier(n_neighbors=5)
-		modelo.fit(xTreino, yTreino)
+
+		resultados = []
+		for k in range(1, 21):
+			modelo = neighbors.KNeighborsClassifier(n_neighbors=k)
+			modelo.fit(xTreino, yTreino)
+			previsoes = modelo.predict(xValidacao)
+			acuracia = accuracy_score(yValidacao, previsoes)
+			resultados.append((k, acuracia))
+
+		resultados.sort(key=lambda r: r[1], reverse=True)
+		melhorK, melhorAcuracia = resultados[0]
 
 		print(f"\nAbordagem: {abordagem}")
+		print("Busca de hiperparâmetro (n_neighbors) - top 3:")
+		for k, acuracia in resultados[:3]:
+			print(f"  n_neighbors={k}: acurácia={acuracia:.4f}")
+		print(f"Escolhido: n_neighbors={melhorK} (acurácia={melhorAcuracia:.4f})")
+
+		modelo = neighbors.KNeighborsClassifier(n_neighbors=melhorK)
+		modelo.fit(xTreino, yTreino)
+
 		for nome, features, classes in (
 			("Validação", xValidacao, yValidacao),
 			("Teste", xTeste, yTeste),

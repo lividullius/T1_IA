@@ -13,22 +13,6 @@ FEATURES_AB2 = [
 	"casas_vazias", "vez",
 ]
 
-# Abordagem anterior, mantida como referência:
-# dados = pd.read_csv("Dados-T1-IA.csv", sep=";")
-# X = dados.drop(columns="Resultado")
-# Y = dados["Resultado"].values
-# xTreino, xTemporario, yTreino, yTemporario = train_test_split(
-#     X, Y, test_size=0.2, random_state=42, stratify=Y
-# )
-# xTeste, xValidacao, yTeste, yValidacao = train_test_split(
-#     xTemporario, yTemporario, test_size=0.5, random_state=42,
-#     stratify=yTemporario
-# )
-# Depois, o scaler era ajustado sobre essa divisao unica.
-# Agora cada abordagem (ab1 e ab2) tem treino, validacao e teste proprios,
-# e o scaler continua sendo ajustado somente no conjunto de treino.
-
-
 def carregar_dados(abordagem):
 	treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
 	validacao = pd.read_csv(DATA_DIR / f"{abordagem}_validacao.csv")
@@ -69,13 +53,33 @@ def main():
 		xValidacao = normalizador_X.transform(xValidacao)
 		xTeste = normalizador_X.transform(xTeste)
 
+		resultados = []
+		for camadas in [(10,), (20,), (50,)]:
+			for taxa in [0.001, 0.01]:
+				mlp = MLPClassifier(
+					hidden_layer_sizes=camadas, activation="logistic", solver="adam",
+					learning_rate_init=taxa, max_iter=3000, random_state=42,
+				)
+				mlp.fit(xTreino, yTreino)
+				previsoes = mlp.predict(xValidacao)
+				acuracia = accuracy_score(yValidacao, previsoes)
+				resultados.append((camadas, taxa, acuracia))
+
+		resultados.sort(key=lambda r: r[2], reverse=True)
+		melhorCamadas, melhorTaxa, melhorAcuracia = resultados[0]
+
+		print(f"\nAbordagem: {abordagem}")
+		print("Busca de hiperparâmetro (hidden_layer_sizes, learning_rate_init) - top 3:")
+		for camadas, taxa, acuracia in resultados[:3]:
+			print(f"  hidden_layer_sizes={camadas}, learning_rate_init={taxa}: acurácia={acuracia:.4f}")
+		print(f"Escolhido: hidden_layer_sizes={melhorCamadas}, learning_rate_init={melhorTaxa} (acurácia={melhorAcuracia:.4f})")
+
 		mlp = MLPClassifier(
-			hidden_layer_sizes=(20,), activation="logistic", solver="adam",
-			learning_rate_init=0.001, max_iter=3000, random_state=42,
+			hidden_layer_sizes=melhorCamadas, activation="logistic", solver="adam",
+			learning_rate_init=melhorTaxa, max_iter=3000, random_state=42,
 		)
 		mlp.fit(xTreino, yTreino)
 
-		print(f"\nAbordagem: {abordagem}")
 		for nome, features, classes in (
 			("Validação", xValidacao, yValidacao),
 			("Teste", xTeste, yTeste),

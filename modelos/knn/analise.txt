@@ -1,0 +1,49 @@
+KNN (KNeighborsClassifier)
+============================
+
+Como funciona
+-------------
+O KNN (k-vizinhos mais proximos) é um método que não constrói um modelo
+explicito no treino, apenas guarda todos os exemplos.
+Para classificar um exemplo novo, calcula a distancia
+(euclidiana, por padrao no scikit-learn) desse exemplo ate todos os
+exemplos de treino, seleciona os k mais proximos e atribui a classe que
+for majoritaria entre esses k vizinhos.
+
+Pre-processamento necessario
+-----------------------------
+Em principio o KNN é sensivel a escala das features, pois se baseia em
+distancia: features com valores maiores dominariam o calculo da
+distancia. Neste projeto, porem, nao foi aplicado um StandardScaler para
+o KNN: na abordagem ab1 todas as 9 features ja estao na mesma escala
+(-1, 0 ou 1, uma por casa do tabuleiro); na abordagem ab2 as 7 features
+sao contagens pequenas e comparaveis entre si (quantidade de pecas,
+casas vazias, linhas com duas pecas, etc.), entao a diferenca de escala
+entre elas e pequena o suficiente para nao distorcer as distancias de
+forma relevante para este dataset.
+
+Ajuste de hiperparametro (tuning)
+-----------------------------------
+Hiperparametro ajustado: n_neighbors (k). A função main() em knn.py testa k de 1
+a 20, treina no conjunto de treino, avalia a acuracia no conjunto de
+validacao para cada k, imprime o top 3 e escolhe o k de maior acuracia
+(em empate, o menor k testado primeiro).
+
+Resultado observado (rodando main()):
+- Abordagem ab1:
+    1) n_neighbors=1  acuracia=0.5541
+    2) n_neighbors=4  acuracia=0.5223
+    3) n_neighbors=3  acuracia=0.5032
+    Escolhido: n_neighbors=1
+- Abordagem ab2:
+    1) n_neighbors=1  acuracia=0.9299
+    2) n_neighbors=3  acuracia=0.9299
+    3) n_neighbors=4  acuracia=0.9299
+    Escolhido: n_neighbors=1
+
+O k escolhido ficou baixo (k=1) em ambas as abordagens, o que sugere
+classes bem separadas no espaco de features (principalmente em ab2), mas
+tambem indica maior risco de overfitting em relacao a k's maiores -
+por isso e util comparar com o desempenho no conjunto de teste, que
+ficou proximo ao de validacao, indicando que nao houve overfitting
+grave nesses dados.
