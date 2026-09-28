@@ -1,0 +1,158 @@
+qtd_x,qtd_o,pos_ocupadas,linhas_2x,linhas_2o,casas_vazias,vez,classe
+4,3,7,1,1,2,0,X venceu
+5,4,9,0,0,0,0,X venceu
+4,3,7,1,0,2,0,Tem jogo
+3,2,5,0,0,4,0,X venceu
+4,3,7,1,1,2,0,X venceu
+4,4,8,1,1,1,1,O venceu
+4,4,8,1,1,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,0,0,3,1,Tem jogo
+4,4,8,0,1,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+4,3,7,0,0,2,0,X venceu
+4,4,8,1,0,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,0,1,3,1,Tem jogo
+2,2,4,0,1,5,1,Tem jogo
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+3,3,6,2,1,3,1,Tem jogo
+4,4,8,1,0,1,1,O venceu
+4,3,7,0,0,2,0,X venceu
+4,3,7,2,0,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,3,0,3,1,Tem jogo
+3,2,5,0,1,4,0,X venceu
+3,2,5,0,1,4,0,X venceu
+4,3,7,2,0,2,0,X venceu
+4,4,8,0,0,1,1,O venceu
+4,3,7,1,0,2,0,X venceu
+4,4,8,1,1,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,2,5,0,0,4,0,X venceu
+5,4,9,0,0,0,0,Empate
+4,4,8,1,0,1,1,O venceu
+4,3,7,0,1,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+4,4,8,1,1,1,1,O venceu
+3,2,5,1,1,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+2,2,4,0,0,5,1,Tem jogo
+3,2,5,2,0,4,0,Tem jogo
+4,4,8,0,1,1,1,O venceu
+5,4,9,0,0,0,0,X venceu
+2,1,3,1,0,6,0,Tem jogo
+4,4,8,0,0,1,1,O venceu
+4,3,7,1,0,2,0,X venceu
+4,3,7,1,1,2,0,Tem jogo
+3,3,6,1,0,3,1,O venceu
+3,3,6,1,0,3,1,O venceu
+4,3,7,2,0,2,0,X venceu
+4,3,7,1,0,2,0,X venceu
+3,2,5,2,0,4,0,Tem jogo
+3,3,6,1,1,3,1,Tem jogo
+3,3,6,0,2,3,1,Tem jogo
+4,4,8,1,1,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+4,3,7,1,0,2,0,Tem jogo
+2,2,4,1,0,5,1,Tem jogo
+4,3,7,0,1,2,0,X venceu
+1,1,2,0,0,7,1,Tem jogo
+3,2,5,0,1,4,0,X venceu
+5,4,9,0,0,0,0,Empate
+3,2,5,2,0,4,0,Tem jogo
+3,3,6,0,0,3,1,O venceu
+3,3,6,1,0,3,1,O venceu
+4,3,7,0,1,2,0,X venceu
+4,3,7,1,1,2,0,X venceu
+3,3,6,1,0,3,1,O venceu
+3,2,5,0,0,4,0,X venceu
+4,3,7,1,1,2,0,X venceu
+2,2,4,0,1,5,1,Tem jogo
+4,3,7,1,1,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+3,2,5,1,1,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+3,2,5,2,1,4,0,Tem jogo
+4,3,7,0,1,2,0,X venceu
+4,3,7,1,0,2,0,X venceu
+4,3,7,1,0,2,0,X venceu
+4,3,7,1,1,2,0,X venceu
+2,2,4,1,0,5,1,Tem jogo
+4,3,7,2,1,2,0,Tem jogo
+3,3,6,1,0,3,1,O venceu
+3,3,6,1,0,3,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+3,2,5,1,0,4,0,Tem jogo
+3,2,5,2,0,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+3,2,5,0,0,4,0,X venceu
+5,4,9,0,0,0,0,Empate
+4,4,8,1,0,1,1,O venceu
+4,3,7,2,0,2,0,Tem jogo
+4,4,8,1,1,1,1,O venceu
+3,3,6,1,0,3,1,O venceu
+4,3,7,1,0,2,0,X venceu
+4,4,8,1,1,1,1,O venceu
+4,3,7,1,1,2,0,X venceu
+3,3,6,1,1,3,1,Tem jogo
+3,2,5,1,0,4,0,Tem jogo
+3,3,6,0,0,3,1,O venceu
+4,3,7,1,0,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+4,3,7,0,0,2,0,X venceu
+3,3,6,0,0,3,1,O venceu
+4,4,8,1,0,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+5,4,9,0,0,0,0,Empate
+2,2,4,0,1,5,1,Tem jogo
+4,3,7,0,1,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+3,3,6,1,0,3,1,O venceu
+3,3,6,0,0,3,1,O venceu
+5,4,9,0,0,0,0,X venceu
+3,2,5,0,0,4,0,X venceu
+3,3,6,1,0,3,1,O venceu
+3,2,5,0,0,4,0,X venceu
+5,4,9,0,0,0,0,Empate
+4,3,7,1,1,2,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+4,3,7,2,0,2,0,Tem jogo
+3,2,5,2,0,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+3,2,5,2,1,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+4,3,7,1,1,2,0,X venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,O venceu
+5,4,9,0,0,0,0,Empate
+3,3,6,0,0,3,1,O venceu
+4,4,8,1,1,1,1,O venceu
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+3,3,6,1,0,3,1,Tem jogo
+3,2,5,2,0,4,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate
+2,1,3,1,0,6,0,Tem jogo
+2,1,3,0,0,6,0,Tem jogo
+5,4,9,0,0,0,0,Empate
+4,3,7,0,1,2,0,X venceu
+3,3,6,1,1,3,1,Tem jogo
+3,3,6,0,2,3,1,Tem jogo
+3,3,6,0,0,3,1,O venceu
+4,4,8,1,1,1,1,O venceu
+4,3,7,1,0,2,0,X venceu
+4,4,8,0,0,1,1,O venceu
+2,2,4,0,1,5,1,Tem jogo
+5,4,9,0,0,0,0,Empate
+5,4,9,0,0,0,0,Empate

@@ -1,0 +1,801 @@
+top-left,top-middle,top-right,middle-left,middle-middle,middle-right,bottom-left,bottom-middle,bottom-right,classe,origem
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+o,x,b,o,o,x,x,x,o,O venceu,uci_real
+x,o,x,x,x,o,o,o,x,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,x,b,b,x,o,o,o,x,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,o,o,x,b,x,o,x,Tem jogo,gerado
+b,o,b,x,o,b,x,o,x,O venceu,uci_real
+x,x,o,x,o,o,x,o,x,X venceu,uci_real
+x,o,x,b,b,x,o,b,o,Tem jogo,gerado
+x,x,b,o,o,b,b,b,x,Tem jogo,gerado
+o,o,o,b,x,x,x,o,x,O venceu,uci_real
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,x,o,b,o,o,o,x,x,O venceu,uci_real
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+b,o,x,o,x,b,x,b,b,X venceu,uci_real
+b,x,x,b,b,x,o,o,o,O venceu,uci_real
+o,b,x,o,b,x,o,x,b,O venceu,uci_real
+b,o,b,x,x,o,b,b,b,Tem jogo,gerado
+o,b,x,x,b,x,o,o,x,X venceu,uci_real
+x,b,b,b,x,b,x,o,o,Tem jogo,gerado
+x,b,b,o,o,b,b,x,x,Tem jogo,gerado
+x,o,b,o,x,o,x,x,b,Tem jogo,gerado
+x,o,o,x,x,b,o,b,x,X venceu,uci_real
+x,o,b,b,x,o,x,o,x,X venceu,uci_real
+x,b,b,x,b,x,o,o,o,O venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+b,x,o,x,o,x,o,o,x,O venceu,uci_real
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,b,x,o,x,b,o,x,b,O venceu,uci_real
+o,o,o,b,x,x,o,x,x,O venceu,uci_real
+o,o,o,x,b,x,x,o,x,O venceu,uci_real
+o,x,x,o,o,o,b,x,x,O venceu,uci_real
+b,o,x,x,o,b,b,o,x,O venceu,uci_real
+x,x,b,o,o,o,b,x,b,O venceu,uci_real
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+b,x,o,x,o,o,x,x,o,O venceu,uci_real
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+b,o,x,x,b,x,b,o,b,Tem jogo,gerado
+x,o,x,b,o,x,o,b,x,X venceu,uci_real
+o,o,o,b,x,b,b,x,x,O venceu,uci_real
+x,o,o,x,x,o,o,x,x,X venceu,uci_real
+b,x,b,b,b,b,x,b,o,Tem jogo,gerado
+b,o,x,x,x,x,b,o,o,X venceu,uci_real
+x,x,o,b,b,o,b,x,o,O venceu,uci_real
+x,x,x,x,b,o,b,o,o,X venceu,uci_real
+o,o,x,x,x,o,x,b,b,X venceu,uci_real
+b,b,o,x,b,b,b,o,x,Tem jogo,gerado
+b,b,o,b,b,x,b,o,x,Tem jogo,gerado
+o,x,b,b,b,o,b,b,x,Tem jogo,gerado
+x,o,x,b,x,b,o,o,x,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,b,o,x,o,o,x,b,x,X venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+b,o,o,x,o,x,x,o,x,O venceu,uci_real
+o,b,b,o,x,x,o,b,x,O venceu,uci_real
+x,x,o,o,x,b,o,b,b,Tem jogo,gerado
+x,x,o,x,o,b,o,b,b,O venceu,uci_real
+b,b,b,x,x,x,o,o,b,X venceu,uci_real
+o,b,o,x,o,x,x,x,o,O venceu,uci_real
+b,x,o,x,o,x,o,b,b,O venceu,uci_real
+x,b,o,x,o,x,x,b,o,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,x,o,o,o,b,x,x,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+o,o,x,x,o,b,x,o,x,O venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,o,o,x,b,b,b,x,x,O venceu,uci_real
+x,b,b,b,o,x,b,b,o,Tem jogo,gerado
+x,b,o,b,x,o,b,x,o,O venceu,uci_real
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,x,o,b,o,o,b,b,x,Tem jogo,gerado
+x,o,b,x,x,o,b,b,o,Tem jogo,gerado
+x,b,o,x,o,x,o,o,x,O venceu,uci_real
+x,b,o,o,x,x,o,b,x,X venceu,uci_real
+x,b,o,b,o,x,o,x,b,O venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,b,b,x,b,o,x,b,o,X venceu,uci_real
+b,x,o,b,o,x,b,b,b,Tem jogo,gerado
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+b,o,x,b,b,x,o,b,x,X venceu,uci_real
+o,b,x,b,x,o,x,o,x,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+o,o,x,x,x,x,b,o,b,X venceu,uci_real
+b,x,o,x,b,b,b,b,b,Tem jogo,gerado
+b,o,x,o,b,o,x,x,x,X venceu,uci_real
+o,b,x,o,x,x,o,b,b,O venceu,uci_real
+o,x,x,b,x,o,b,o,x,Tem jogo,gerado
+x,x,o,x,b,o,x,o,b,X venceu,uci_real
+o,b,b,x,o,x,b,x,o,O venceu,uci_real
+x,x,o,x,b,o,b,b,o,O venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+b,x,o,x,o,b,o,x,b,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,b,b,b,x,b,b,o,b,Tem jogo,gerado
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,x,x,x,b,o,o,o,b,X venceu,uci_real
+o,x,b,x,x,b,x,o,o,Tem jogo,gerado
+b,x,o,o,o,x,o,x,x,O venceu,uci_real
+x,o,x,b,b,o,o,x,x,Tem jogo,gerado
+b,o,x,b,x,x,x,o,o,X venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+x,x,o,o,o,b,o,x,x,O venceu,uci_real
+x,o,o,x,x,o,b,x,o,O venceu,uci_real
+o,x,x,x,b,x,o,o,o,O venceu,uci_real
+x,o,b,o,x,o,x,b,b,Tem jogo,gerado
+b,x,o,x,o,o,o,x,x,O venceu,uci_real
+b,o,b,x,o,x,x,o,b,O venceu,uci_real
+o,x,x,o,o,x,x,b,o,O venceu,uci_real
+o,x,x,x,x,o,o,x,o,X venceu,uci_real
+x,b,o,b,o,o,x,x,x,X venceu,uci_real
+o,b,o,o,x,b,x,x,x,X venceu,uci_real
+x,x,x,o,b,b,o,o,x,X venceu,uci_real
+x,b,x,o,x,b,o,o,x,X venceu,uci_real
+x,b,o,b,b,o,x,o,x,Tem jogo,gerado
+o,b,x,b,o,x,b,b,b,Tem jogo,gerado
+b,o,b,b,x,b,x,o,b,Tem jogo,gerado
+x,b,x,x,b,b,o,o,b,Tem jogo,gerado
+b,b,x,o,b,x,x,o,b,Tem jogo,gerado
+o,x,b,o,x,x,o,b,b,O venceu,uci_real
+b,x,b,o,b,o,x,x,b,Tem jogo,gerado
+x,b,x,o,x,o,x,b,o,X venceu,uci_real
+x,x,o,x,o,o,o,x,b,O venceu,uci_real
+o,x,x,b,x,x,o,o,o,O venceu,uci_real
+b,o,b,b,x,x,o,o,x,Tem jogo,gerado
+b,o,o,b,o,x,x,x,x,X venceu,uci_real
+b,x,b,o,b,b,x,o,x,Tem jogo,gerado
+o,b,x,x,o,x,o,x,o,O venceu,uci_real
+o,o,x,o,x,b,o,x,x,O venceu,uci_real
+o,x,o,x,x,x,o,o,x,X venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+o,o,o,b,b,x,x,x,b,O venceu,uci_real
+x,b,x,o,x,b,o,b,o,Tem jogo,gerado
+x,o,x,o,x,x,o,o,x,X venceu,uci_real
+b,x,b,x,o,o,x,b,o,Tem jogo,gerado
+b,x,o,x,o,x,o,x,o,O venceu,uci_real
+o,o,o,x,x,b,b,x,b,O venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+b,o,x,x,o,x,b,o,b,O venceu,uci_real
+x,b,o,b,x,b,b,o,x,X venceu,uci_real
+x,o,b,x,o,x,o,o,x,O venceu,uci_real
+x,x,b,o,o,o,x,b,b,O venceu,uci_real
+x,b,x,o,o,x,b,o,x,X venceu,uci_real
+b,b,x,x,b,o,b,x,o,Tem jogo,gerado
+o,b,b,x,b,b,b,x,o,Tem jogo,gerado
+o,x,b,x,o,b,b,o,x,Tem jogo,gerado
+o,x,x,o,o,x,x,o,x,X venceu,uci_real
+x,x,o,o,x,b,o,b,x,X venceu,uci_real
+x,b,b,o,o,b,x,b,x,Tem jogo,gerado
+x,x,x,o,o,b,b,o,x,X venceu,uci_real
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,o,x,x,x,b,b,b,o,Tem jogo,gerado
+b,x,b,o,x,o,x,x,o,X venceu,uci_real
+o,b,b,b,b,b,x,x,b,Tem jogo,gerado
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+o,x,b,x,x,o,o,x,b,X venceu,uci_real
+b,b,x,x,b,x,o,o,o,O venceu,uci_real
+o,b,o,b,x,o,x,x,x,X venceu,uci_real
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,o,b,b,x,o,x,x,o,Tem jogo,gerado
+o,o,x,b,x,x,x,o,b,X venceu,uci_real
+x,o,x,b,o,b,x,o,b,O venceu,uci_real
+x,b,o,b,x,b,o,b,x,X venceu,uci_real
+o,x,x,b,o,x,x,o,o,O venceu,uci_real
+x,o,b,b,o,x,b,o,x,O venceu,uci_real
+o,x,o,o,b,x,o,x,x,O venceu,uci_real
+b,b,x,o,x,o,o,b,x,Tem jogo,gerado
+b,x,x,b,o,x,o,o,b,Tem jogo,gerado
+x,o,x,x,o,x,b,o,o,O venceu,uci_real
+b,b,o,b,o,b,x,x,x,X venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+b,b,x,x,x,b,o,o,b,Tem jogo,gerado
+o,o,x,b,b,b,o,x,x,Tem jogo,gerado
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+b,b,x,b,b,b,x,b,o,Tem jogo,gerado
+x,x,o,b,x,o,o,b,b,Tem jogo,gerado
+o,x,b,b,b,o,x,x,b,Tem jogo,gerado
+b,o,b,o,b,b,x,b,x,Tem jogo,gerado
+x,o,b,b,x,x,o,o,x,X venceu,uci_real
+o,b,b,x,x,b,b,o,b,Tem jogo,gerado
+x,x,o,x,o,x,o,o,b,O venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+o,o,x,b,b,x,o,x,x,X venceu,uci_real
+o,o,x,x,o,x,x,b,o,O venceu,uci_real
+b,x,x,b,b,o,b,x,o,Tem jogo,gerado
+b,o,b,x,x,x,o,x,o,X venceu,uci_real
+b,o,x,o,b,b,b,b,x,Tem jogo,gerado
+o,x,o,b,b,x,o,b,x,Tem jogo,gerado
+b,b,o,b,b,x,o,x,b,Tem jogo,gerado
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,o,o,x,o,b,b,b,x,Tem jogo,gerado
+b,x,o,x,o,b,b,b,b,Tem jogo,gerado
+o,o,o,x,b,b,x,x,b,O venceu,uci_real
+x,x,x,o,o,b,x,o,b,X venceu,uci_real
+o,o,b,x,x,b,x,o,x,Tem jogo,gerado
+o,x,x,x,o,b,b,b,o,O venceu,uci_real
+x,o,b,x,x,o,x,b,o,X venceu,uci_real
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,b,x,x,o,o,o,o,O venceu,uci_real
+o,x,x,o,b,x,o,b,b,O venceu,uci_real
+b,o,b,b,o,x,b,x,x,Tem jogo,gerado
+b,x,o,b,x,o,o,x,x,X venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,x,b,b,o,x,x,o,o,Tem jogo,gerado
+b,b,o,o,b,x,o,x,x,Tem jogo,gerado
+x,x,o,o,x,o,x,b,o,O venceu,uci_real
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+b,o,x,o,b,x,x,o,x,X venceu,uci_real
+x,x,x,b,o,b,o,x,o,X venceu,uci_real
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,x,b,b,b,x,o,x,o,Tem jogo,gerado
+b,x,x,b,o,o,x,b,o,Tem jogo,gerado
+x,x,b,x,b,o,x,o,o,X venceu,uci_real
+x,x,o,b,o,o,x,x,b,Tem jogo,gerado
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,o,b,o,x,b,x,x,x,X venceu,uci_real
+x,b,o,o,b,b,x,x,o,Tem jogo,gerado
+x,o,x,b,o,x,o,x,b,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,x,o,b,o,b,x,x,x,X venceu,uci_real
+b,o,o,x,o,x,o,x,x,O venceu,uci_real
+b,b,o,b,o,x,o,x,x,O venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+o,x,b,o,b,b,o,x,x,O venceu,uci_real
+x,b,o,x,o,b,o,b,x,O venceu,uci_real
+x,x,b,o,b,b,o,x,b,Tem jogo,gerado
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,b,x,b,x,o,o,o,b,Tem jogo,gerado
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+o,b,x,o,x,b,x,b,b,X venceu,uci_real
+x,x,b,x,o,o,x,o,b,X venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+o,o,x,x,o,x,x,o,b,O venceu,uci_real
+b,b,o,o,x,o,x,x,x,X venceu,uci_real
+x,x,o,b,o,x,o,x,o,O venceu,uci_real
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+x,x,x,x,o,o,o,x,o,X venceu,uci_real
+o,b,x,o,b,b,o,x,x,O venceu,uci_real
+x,b,o,b,x,o,o,x,x,X venceu,uci_real
+x,x,o,x,o,o,x,b,b,X venceu,uci_real
+o,x,x,o,b,b,b,b,b,Tem jogo,gerado
+x,o,x,b,o,b,b,o,x,O venceu,uci_real
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,b,o,x,x,o,o,b,x,X venceu,uci_real
+o,b,x,b,x,o,x,b,b,X venceu,uci_real
+x,b,b,b,b,b,b,o,b,Tem jogo,gerado
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+b,b,x,o,o,o,x,b,x,O venceu,uci_real
+b,b,b,o,o,b,x,x,x,X venceu,uci_real
+o,x,x,x,o,o,x,b,o,O venceu,uci_real
+x,o,o,b,x,o,x,x,o,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,o,o,x,o,x,x,b,b,X venceu,uci_real
+o,b,x,x,o,x,x,o,o,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+b,x,o,b,x,x,b,b,o,Tem jogo,gerado
+b,x,x,b,x,b,o,o,o,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,o,x,o,x,o,b,b,x,X venceu,uci_real
+b,x,o,x,b,o,b,x,o,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,o,x,o,o,x,x,x,X venceu,uci_real
+o,x,b,o,x,o,b,x,x,X venceu,uci_real
+b,x,b,x,x,o,o,x,o,X venceu,uci_real
+b,b,o,o,b,x,x,o,x,Tem jogo,gerado
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+o,b,x,x,x,o,x,o,b,X venceu,uci_real
+o,o,x,x,x,x,b,b,o,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,x,x,o,x,o,b,o,O venceu,uci_real
+x,o,b,o,b,b,x,o,x,Tem jogo,gerado
+x,b,x,b,b,x,b,o,o,Tem jogo,gerado
+b,b,x,b,x,x,o,o,o,O venceu,uci_real
+b,b,b,x,b,x,o,x,o,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+b,x,b,x,b,b,x,o,o,Tem jogo,gerado
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+b,b,x,o,o,o,x,x,b,O venceu,uci_real
+x,o,x,o,b,x,o,x,b,Tem jogo,gerado
+o,o,b,x,o,x,x,o,x,O venceu,uci_real
+b,o,x,o,x,x,x,b,o,X venceu,uci_real
+b,b,x,o,b,b,x,b,b,Tem jogo,gerado
+x,b,b,x,b,o,o,x,o,Tem jogo,gerado
+o,b,o,x,b,o,x,x,x,X venceu,uci_real
+b,o,x,x,o,x,x,o,o,O venceu,uci_real
+b,b,x,o,b,b,b,x,o,Tem jogo,gerado
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+b,b,o,b,b,o,x,x,x,X venceu,uci_real
+o,x,x,o,o,x,o,x,b,O venceu,uci_real
+b,b,o,o,x,x,b,x,b,Tem jogo,gerado
+b,b,b,x,b,o,x,o,b,Tem jogo,gerado
+x,x,o,o,o,b,b,b,x,Tem jogo,gerado
+b,b,b,b,b,o,b,x,x,Tem jogo,gerado
+b,x,o,b,o,x,o,x,b,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+x,x,o,o,o,x,o,b,x,O venceu,uci_real
+x,x,o,b,b,o,x,b,o,O venceu,uci_real
+x,x,o,o,o,b,b,x,x,Tem jogo,gerado
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+o,x,x,o,b,x,x,o,b,Tem jogo,gerado
+x,o,x,x,b,o,b,b,o,Tem jogo,gerado
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,o,x,b,o,x,b,o,b,O venceu,uci_real
+x,b,o,b,b,o,x,b,x,Tem jogo,gerado
+o,x,o,b,x,o,b,b,x,Tem jogo,gerado
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+o,b,x,x,o,x,b,b,o,O venceu,uci_real
+o,o,o,o,x,x,b,x,x,O venceu,uci_real
+o,x,x,x,b,o,b,o,b,Tem jogo,gerado
+x,b,x,x,o,x,o,o,o,O venceu,uci_real
+x,x,o,b,x,o,x,o,o,O venceu,uci_real
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+o,x,x,o,x,x,o,b,o,O venceu,uci_real
+o,o,o,o,x,x,x,x,b,O venceu,uci_real
+x,b,x,o,x,b,b,o,b,Tem jogo,gerado
+b,b,x,b,o,b,b,x,o,Tem jogo,gerado
+b,x,b,o,o,o,b,x,x,O venceu,uci_real
+x,x,o,b,o,b,o,x,b,O venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+o,x,b,x,x,o,x,b,o,Tem jogo,gerado
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,o,x,x,b,o,o,o,O venceu,uci_real
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,o,x,o,x,o,x,x,o,X venceu,uci_real
+o,b,x,b,o,b,x,x,o,O venceu,uci_real
+b,o,b,x,x,x,b,o,b,X venceu,uci_real
+o,x,x,o,b,b,o,b,x,O venceu,uci_real
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,x,o,o,x,b,b,o,x,X venceu,uci_real
+b,x,o,b,o,x,o,b,x,O venceu,uci_real
+x,x,b,x,o,b,x,o,o,X venceu,uci_real
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+x,o,x,o,b,x,o,b,x,X venceu,uci_real
+x,o,o,b,b,o,x,x,b,Tem jogo,gerado
+x,x,x,b,b,o,b,o,b,X venceu,uci_real
+x,b,x,x,o,o,x,b,o,X venceu,uci_real
+x,o,x,o,o,x,x,o,b,O venceu,uci_real
+b,o,b,b,x,b,o,x,x,Tem jogo,gerado
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,x,o,b,o,o,b,x,X venceu,uci_real
+o,b,b,x,b,o,x,x,o,Tem jogo,gerado
+o,b,b,o,x,o,x,x,x,X venceu,uci_real
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,x,o,o,x,o,x,x,X venceu,uci_real
+o,x,x,x,o,x,b,o,o,O venceu,uci_real
+o,o,x,o,b,x,x,b,x,X venceu,uci_real
+b,b,x,o,o,x,b,b,x,X venceu,uci_real
+b,x,b,b,b,x,o,b,b,Tem jogo,gerado
+x,o,b,o,o,b,x,x,x,X venceu,uci_real
+x,x,b,b,x,o,b,o,o,Tem jogo,gerado
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,x,x,x,o,b,o,o,b,X venceu,uci_real
+o,b,x,o,x,x,x,b,o,X venceu,uci_real
+b,b,x,x,o,b,o,b,b,Tem jogo,gerado
+o,x,o,b,o,x,x,x,o,O venceu,uci_real
+o,b,o,b,b,x,b,x,x,Tem jogo,gerado
+o,o,x,b,x,x,o,b,x,X venceu,uci_real
+b,x,o,o,x,b,x,b,b,Tem jogo,gerado
+x,x,o,o,b,b,x,b,o,Tem jogo,gerado
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,o,x,x,b,x,o,b,x,X venceu,uci_real
+b,o,x,b,x,x,o,o,x,X venceu,uci_real
+o,x,x,b,x,o,o,x,b,X venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+x,o,b,b,x,b,o,b,x,X venceu,uci_real
+x,o,x,o,b,x,b,o,x,X venceu,uci_real
+x,b,o,b,x,o,b,x,b,Tem jogo,gerado
+x,x,o,x,o,b,b,x,o,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,x,o,b,o,x,o,x,x,O venceu,uci_real
+b,b,o,o,b,b,b,x,x,Tem jogo,gerado
+x,b,b,o,x,o,x,b,b,Tem jogo,gerado
+b,b,x,o,x,x,o,b,o,Tem jogo,gerado
+x,x,b,b,o,b,b,o,b,Tem jogo,gerado
+x,o,o,x,o,x,b,o,x,O venceu,uci_real
+x,b,o,x,b,b,x,o,b,X venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+b,x,b,o,x,x,o,x,o,X venceu,uci_real
+x,x,o,x,x,o,o,o,x,X venceu,uci_real
+o,b,x,x,b,x,o,o,b,Tem jogo,gerado
+x,x,o,o,o,o,x,x,b,O venceu,uci_real
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,o,b,x,x,b,Tem jogo,gerado
+x,o,o,x,o,x,o,b,x,O venceu,uci_real
+o,b,x,x,o,o,x,x,b,Tem jogo,gerado
+o,x,o,x,x,x,b,b,o,X venceu,uci_real
+o,x,b,o,o,x,o,x,x,O venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,x,b,x,b,b,o,o,o,O venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,b,x,b,x,o,b,b,o,Tem jogo,gerado
+o,x,o,x,o,x,o,b,x,O venceu,uci_real
+b,x,o,x,x,o,b,b,o,O venceu,uci_real
+o,o,x,o,x,b,x,x,b,X venceu,uci_real
+o,x,x,b,b,b,b,b,b,Tem jogo,gerado
+o,b,b,o,b,b,x,x,x,X venceu,uci_real
+b,b,b,x,x,x,b,o,o,X venceu,uci_real
+o,x,b,x,o,b,b,b,b,Tem jogo,gerado
+x,b,x,o,b,x,o,b,b,Tem jogo,gerado
+x,o,b,x,o,x,x,b,o,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,b,o,x,o,x,o,x,o,O venceu,uci_real
+b,b,o,x,o,x,b,b,x,Tem jogo,gerado
+x,o,b,x,b,o,x,o,x,X venceu,uci_real
+o,b,o,x,x,x,x,b,o,X venceu,uci_real
+x,o,x,o,o,b,b,x,b,Tem jogo,gerado
+o,b,o,x,x,x,b,b,b,X venceu,uci_real
+b,x,b,x,b,x,o,o,o,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+x,o,o,x,b,o,x,x,b,X venceu,uci_real
+o,x,b,b,o,x,b,x,o,O venceu,uci_real
+b,b,b,o,o,b,b,x,x,Tem jogo,gerado
+b,o,x,b,o,b,x,x,b,Tem jogo,gerado
+o,x,b,b,b,x,o,b,b,Tem jogo,gerado
+o,x,o,b,b,o,x,x,x,X venceu,uci_real
+x,x,o,b,o,x,b,o,b,Tem jogo,gerado
+x,o,x,x,o,b,x,b,o,X venceu,uci_real
+o,x,x,o,o,x,b,x,o,O venceu,uci_real
+b,o,b,x,o,b,o,x,x,Tem jogo,gerado
+o,o,o,x,x,o,b,x,x,O venceu,uci_real
+o,b,x,x,o,o,x,x,o,O venceu,uci_real
+x,x,x,o,o,b,o,b,x,X venceu,uci_real
+x,o,x,x,o,b,o,o,x,O venceu,uci_real
+x,o,o,x,x,o,x,o,x,X venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+b,o,b,x,b,o,x,b,x,Tem jogo,gerado
+b,o,b,x,x,x,o,b,b,X venceu,uci_real
+b,b,o,x,x,o,x,b,o,O venceu,uci_real
+x,o,o,b,b,x,o,x,x,Tem jogo,gerado
+o,b,x,o,x,x,b,b,o,Tem jogo,gerado
+o,o,o,x,x,b,x,x,o,O venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,x,b,x,o,b,b,x,o,O venceu,uci_real
+o,b,b,x,o,o,x,x,x,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,b,b,x,b,b,x,o,X venceu,uci_real
+b,b,o,b,x,o,x,x,o,O venceu,uci_real
+o,b,x,b,x,x,x,o,o,X venceu,uci_real
+b,o,x,b,o,x,b,b,x,X venceu,uci_real
+o,b,b,b,o,x,x,b,b,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+x,o,o,x,b,x,b,x,o,Tem jogo,gerado
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,b,b,x,x,b,o,o,o,O venceu,uci_real
+b,o,b,b,x,o,x,b,b,Tem jogo,gerado
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,o,b,b,o,x,x,o,b,O venceu,uci_real
+b,o,x,x,b,x,x,o,o,Tem jogo,gerado
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+o,o,x,b,x,x,x,b,o,X venceu,uci_real
+b,x,b,o,o,b,b,x,x,Tem jogo,gerado
+b,x,x,b,b,b,x,o,o,Tem jogo,gerado
+o,x,b,o,x,o,x,x,b,X venceu,uci_real
+b,o,b,x,b,b,o,x,x,Tem jogo,gerado
+b,b,x,o,x,b,x,b,o,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,x,x,o,b,x,o,b,o,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,o,b,x,x,o,b,b,b,Tem jogo,gerado
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,b,o,x,b,b,b,b,b,Tem jogo,gerado
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,x,o,o,x,o,b,b,x,X venceu,uci_real
+o,x,o,x,x,x,b,o,b,X venceu,uci_real
+x,b,x,x,o,o,o,x,b,Tem jogo,gerado
+x,o,x,b,x,b,b,o,o,Tem jogo,gerado
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+b,o,x,x,b,o,o,x,b,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+x,x,b,o,x,o,b,o,x,X venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+b,b,x,b,b,o,b,x,o,Tem jogo,gerado
+b,x,x,x,o,x,o,o,o,O venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,o,o,o,x,b,b,x,x,X venceu,uci_real
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+x,o,o,x,x,x,o,o,x,X venceu,uci_real
+x,b,b,o,o,o,b,x,x,O venceu,uci_real
+x,b,x,o,o,o,b,x,b,O venceu,uci_real
+x,b,b,o,x,b,o,b,x,X venceu,uci_real
+b,o,b,o,o,x,x,x,x,X venceu,uci_real
+o,x,x,b,b,o,x,b,o,Tem jogo,gerado
+b,o,o,x,x,x,o,b,x,X venceu,uci_real
+o,o,b,b,b,b,x,x,b,Tem jogo,gerado
+x,x,o,b,o,x,o,o,x,O venceu,uci_real
+x,x,o,o,x,b,b,x,o,X venceu,uci_real
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,o,x,b,x,o,O venceu,uci_real
+x,x,b,x,o,o,o,b,x,Tem jogo,gerado
+b,x,b,o,x,b,o,x,b,X venceu,uci_real
+b,x,x,b,x,o,x,o,o,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+b,b,x,o,x,b,x,o,b,X venceu,uci_real
+o,b,b,o,x,x,o,x,b,O venceu,uci_real
+x,b,x,b,x,b,o,o,o,O venceu,uci_real
+o,o,o,b,b,x,b,x,x,O venceu,uci_real
+x,x,b,o,o,o,x,o,x,O venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,x,x,b,b,o,o,o,x,X venceu,uci_real
+x,x,o,o,x,o,o,x,x,X venceu,uci_real
+o,o,o,x,b,x,o,x,x,O venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+x,b,x,x,o,b,x,o,o,X venceu,uci_real
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,o,o,x,x,b,o,x,x,O venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,o,b,b,b,o,x,x,o,Tem jogo,gerado
+x,x,o,b,o,b,o,b,x,O venceu,uci_real
+o,o,x,o,b,x,b,x,x,X venceu,uci_real
+b,x,b,x,o,b,x,o,o,Tem jogo,gerado
+x,x,b,x,o,x,o,o,o,O venceu,uci_real
+o,x,x,o,x,b,o,o,x,O venceu,uci_real
+o,x,x,o,o,b,o,x,x,O venceu,uci_real
+x,b,x,o,b,b,b,x,o,Tem jogo,gerado
+x,o,x,o,o,x,x,b,b,Tem jogo,gerado
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+b,x,x,x,b,b,o,o,b,Tem jogo,gerado
+x,o,b,b,b,x,x,o,o,Tem jogo,gerado
+o,x,o,o,x,b,x,x,b,X venceu,uci_real
+o,o,b,x,x,x,b,o,x,X venceu,uci_real
+b,b,o,b,x,b,b,b,x,Tem jogo,gerado
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+b,b,x,b,x,b,x,o,o,X venceu,uci_real
+b,o,x,x,o,b,x,o,b,O venceu,uci_real
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,o,x,o,o,b,x,o,O venceu,uci_real
+b,o,b,x,x,o,o,x,x,Tem jogo,gerado
+o,o,o,b,x,b,x,b,x,O venceu,uci_real
+x,x,o,x,o,b,x,o,b,X venceu,uci_real
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,x,x,o,x,b,o,b,b,O venceu,uci_real
+o,x,b,x,o,b,x,b,o,O venceu,uci_real
+o,o,b,x,x,x,o,x,b,X venceu,uci_real
+x,b,o,b,b,b,b,x,b,Tem jogo,gerado
+b,o,o,x,x,x,b,b,b,X venceu,uci_real
+b,o,b,b,o,b,x,x,x,X venceu,uci_real
+b,b,b,o,b,x,o,x,x,Tem jogo,gerado
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,o,o,b,o,x,o,x,x,O venceu,uci_real
+o,b,b,x,x,x,x,o,o,X venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+o,o,x,x,o,x,b,x,o,O venceu,uci_real
+o,x,x,o,b,b,o,x,b,O venceu,uci_real
+o,x,x,o,b,o,o,x,x,O venceu,uci_real
+b,b,x,o,x,x,x,o,o,X venceu,uci_real
+o,x,x,b,o,x,b,b,o,O venceu,uci_real
+o,x,x,o,x,o,x,o,x,X venceu,uci_real
+o,b,b,o,x,b,x,o,x,Tem jogo,gerado
+o,x,o,x,o,x,x,b,o,O venceu,uci_real
+o,o,x,x,x,b,x,o,b,X venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+b,b,o,x,b,b,x,o,x,Tem jogo,gerado
+b,x,o,o,x,b,x,x,o,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,b,o,x,o,b,x,o,x,X venceu,uci_real
+x,b,o,x,o,b,o,x,b,O venceu,uci_real
+o,o,b,x,b,x,o,x,b,Tem jogo,gerado
+x,x,o,b,o,x,o,b,b,O venceu,uci_real
+x,o,o,x,b,b,x,x,o,X venceu,uci_real
+x,x,o,b,x,b,o,x,o,X venceu,uci_real
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,b,b,o,x,b,o,x,x,O venceu,uci_real
+x,x,o,x,b,x,o,o,o,O venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+x,o,x,x,b,x,o,o,o,O venceu,uci_real
+o,b,x,b,b,b,o,x,b,Tem jogo,gerado
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+b,o,b,x,o,x,b,o,x,O venceu,uci_real
+x,o,x,o,o,o,x,x,b,O venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+x,x,x,b,o,o,x,b,o,X venceu,uci_real
+x,o,o,b,o,b,x,x,x,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,o,x,b,x,o,x,x,o,X venceu,uci_real
+x,b,x,b,o,x,o,o,x,X venceu,uci_real
+b,x,o,o,x,x,x,o,b,Tem jogo,gerado
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,o,x,o,x,o,b,x,b,Tem jogo,gerado
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,x,x,o,b,b,b,o,b,X venceu,uci_real
+b,b,o,x,b,o,x,x,o,O venceu,uci_real
+x,x,o,x,b,b,o,o,x,Tem jogo,gerado
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,b,o,x,b,o,x,b,b,X venceu,uci_real
+o,b,x,b,x,b,o,o,x,Tem jogo,gerado
+x,o,o,x,b,o,b,x,b,Tem jogo,gerado
+b,o,x,b,x,b,x,b,o,X venceu,uci_real
+o,b,b,b,o,x,x,x,o,O venceu,uci_real
+x,b,x,x,b,b,o,o,o,O venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,o,o,x,b,x,x,b,b,O venceu,uci_real
+o,o,x,o,x,b,x,b,x,X venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+o,x,x,o,b,b,b,x,o,Tem jogo,gerado
+b,b,x,x,o,o,x,b,o,Tem jogo,gerado
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,o,x,x,o,b,x,o,O venceu,uci_real
+o,o,x,x,x,x,x,o,o,X venceu,uci_real
+x,b,o,b,b,o,x,x,o,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,x,o,x,o,o,b,x,O venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+b,b,b,o,x,x,b,x,o,Tem jogo,gerado
+o,b,x,o,o,x,x,x,o,O venceu,uci_real
+b,x,x,o,x,x,o,o,o,O venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+b,x,x,x,o,b,o,b,b,Tem jogo,gerado
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,b,o,o,x,x,x,o,b,Tem jogo,gerado
+x,x,o,x,b,o,o,x,o,O venceu,uci_real
+b,x,x,o,o,o,b,b,x,O venceu,uci_real
+x,b,b,x,o,b,x,o,b,X venceu,uci_real
+x,o,b,b,b,b,b,b,x,Tem jogo,gerado
+x,x,o,o,o,x,x,o,x,Empate,oversample_16_reais
+x,x,o,o,o,o,x,b,x,O venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+o,b,x,o,x,b,o,b,x,O venceu,uci_real
+o,b,b,x,x,x,o,x,o,X venceu,uci_real
+o,x,o,x,x,b,b,x,o,X venceu,uci_real
+o,x,o,o,x,x,x,o,x,Empate,oversample_16_reais
+o,x,b,b,x,o,b,o,x,Tem jogo,gerado
+x,o,b,x,b,o,x,b,b,X venceu,uci_real
+x,b,o,b,o,b,o,x,x,O venceu,uci_real
+o,o,x,b,x,b,x,x,o,X venceu,uci_real
+o,x,b,o,b,x,b,b,x,Tem jogo,gerado
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+o,b,x,x,o,b,b,x,o,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,b,o,x,b,o,b,x,o,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,x,o,x,b,o,O venceu,uci_real
+x,x,o,o,o,b,b,x,b,Tem jogo,gerado
+b,x,o,o,x,b,b,x,b,X venceu,uci_real
+b,b,x,b,b,x,x,o,o,Tem jogo,gerado
+x,o,b,b,o,o,x,x,x,X venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+o,x,o,x,o,o,x,x,x,X venceu,uci_real
+x,b,b,b,b,b,o,o,x,Tem jogo,gerado
+o,o,b,x,x,x,x,o,b,X venceu,uci_real
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,b,x,x,o,o,x,o,b,X venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+o,x,b,o,b,x,o,b,x,O venceu,uci_real
+x,o,o,x,x,b,b,o,x,X venceu,uci_real
+x,o,x,o,o,o,x,b,x,O venceu,uci_real
+x,b,b,o,x,b,b,o,b,Tem jogo,gerado
+o,b,b,o,o,x,x,b,x,Tem jogo,gerado
+b,b,x,o,b,x,b,o,x,X venceu,uci_real
+b,x,x,o,x,b,x,o,o,X venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+b,x,o,o,b,x,b,o,x,Tem jogo,gerado
+b,x,b,x,x,b,o,o,o,O venceu,uci_real
+x,x,x,b,o,x,o,b,o,X venceu,uci_real
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,b,o,b,x,o,x,b,o,O venceu,uci_real
+b,o,b,b,o,x,x,o,x,O venceu,uci_real
+x,b,x,o,o,x,o,b,x,X venceu,uci_real
+b,x,o,b,o,b,b,x,x,Tem jogo,gerado
+b,x,x,b,o,o,b,o,x,Tem jogo,gerado
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,b,o,b,o,b,x,o,x,Tem jogo,gerado
+o,x,b,o,x,x,o,o,x,O venceu,uci_real
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+x,x,b,x,o,o,x,b,o,X venceu,uci_real
+b,b,o,x,x,x,o,o,x,X venceu,uci_real
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+x,o,x,b,x,o,o,x,b,Tem jogo,gerado
+x,x,x,o,o,x,b,o,b,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,x,o,o,o,x,x,x,o,Empate,oversample_16_reais
+b,o,b,o,x,o,x,x,x,X venceu,uci_real
+o,o,o,b,x,x,x,x,o,O venceu,uci_real
+b,x,o,x,b,o,x,b,o,O venceu,uci_real
+o,x,x,b,o,o,x,x,o,O venceu,uci_real
+x,b,o,b,x,o,b,b,x,X venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,o,x,x,x,x,o,o,x,X venceu,uci_real
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+b,o,x,b,o,b,x,b,b,Tem jogo,gerado
+b,b,x,x,x,o,o,x,o,Tem jogo,gerado
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+b,x,x,b,x,o,o,b,b,Tem jogo,gerado
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+o,x,b,o,b,x,o,x,b,O venceu,uci_real
+x,x,x,o,o,b,o,x,b,X venceu,uci_real
+x,x,x,b,o,b,o,o,x,X venceu,uci_real
+x,b,x,o,x,x,b,o,o,Tem jogo,gerado
+o,o,o,x,b,x,b,b,x,O venceu,uci_real
+x,b,o,o,o,x,o,x,x,O venceu,uci_real
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+o,b,o,o,x,x,o,x,x,O venceu,uci_real
+o,x,o,b,x,b,b,o,x,Tem jogo,gerado
+o,x,b,b,x,b,b,b,o,Tem jogo,gerado
+x,o,x,o,x,x,o,x,o,Empate,oversample_16_reais
+b,o,b,b,x,x,b,b,o,Tem jogo,gerado
+x,x,o,o,x,x,x,o,o,Empate,oversample_16_reais
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+o,x,x,b,x,o,x,b,o,X venceu,uci_real
+x,o,b,x,o,x,b,o,b,O venceu,uci_real
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+o,x,b,o,x,b,b,b,x,Tem jogo,gerado
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+o,x,o,b,x,x,b,x,o,X venceu,uci_real
+o,b,o,b,o,x,x,x,x,X venceu,uci_real
+o,o,x,x,x,o,o,x,x,Empate,oversample_16_reais
+x,x,o,o,o,x,o,x,b,O venceu,uci_real
+x,b,x,o,b,b,b,o,x,Tem jogo,gerado
+o,b,x,x,o,x,b,o,x,X venceu,uci_real
+b,x,x,o,b,b,b,o,b,Tem jogo,gerado
+o,x,o,x,o,x,x,o,x,Empate,oversample_16_reais
+b,x,x,x,o,b,b,o,b,Tem jogo,gerado
+x,o,x,x,o,o,b,o,x,O venceu,uci_real
+x,b,o,b,x,o,x,o,x,X venceu,uci_real
+x,o,o,x,b,x,x,o,b,X venceu,uci_real
+x,x,b,o,o,o,x,x,o,O venceu,uci_real
+o,x,o,b,o,x,b,x,x,Tem jogo,gerado
+o,x,b,o,x,b,o,b,x,O venceu,uci_real
+x,o,x,b,o,o,b,x,x,Tem jogo,gerado
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,x,x,o,b,b,x,o,o,X venceu,uci_real
+o,x,b,o,b,x,x,b,o,Tem jogo,gerado
+x,x,x,b,o,b,b,o,b,X venceu,uci_real
+o,x,o,x,x,o,x,o,x,Empate,oversample_16_reais
+x,o,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,o,x,o,o,x,x,x,o,Empate,oversample_16_reais
+x,x,o,x,x,o,o,b,o,O venceu,uci_real
+x,o,x,x,o,x,o,x,o,Empate,oversample_16_reais
+o,b,o,o,x,x,x,b,b,Tem jogo,gerado
+o,o,o,b,x,x,x,b,b,O venceu,uci_real
+x,b,o,x,x,o,o,x,b,Tem jogo,gerado
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+o,o,x,x,x,x,o,b,b,X venceu,uci_real
+o,x,x,x,o,o,x,o,x,Empate,oversample_16_reais
+x,o,b,o,o,x,x,o,x,O venceu,uci_real
+o,x,x,x,x,o,o,o,x,Empate,oversample_16_reais
+x,o,b,o,x,b,b,x,b,Tem jogo,gerado
+o,o,b,x,b,o,x,b,x,Tem jogo,gerado
+x,o,x,x,o,x,o,o,b,O venceu,uci_real
+x,x,x,o,b,o,b,b,b,X venceu,uci_real
+x,o,o,x,b,o,x,b,x,X venceu,uci_real
+x,b,b,x,x,o,o,o,x,X venceu,uci_real
+b,x,x,b,o,x,o,o,x,X venceu,uci_real
+o,o,b,x,o,x,x,x,o,O venceu,uci_real
+x,x,x,x,o,o,x,o,o,X venceu,uci_real
+b,o,b,b,b,x,x,b,o,Tem jogo,gerado
+b,x,b,b,x,x,o,o,o,O venceu,uci_real
+x,o,o,o,x,x,x,x,o,Empate,oversample_16_reais
+x,o,o,o,x,b,x,b,x,X venceu,uci_real
+x,o,x,x,x,o,o,x,o,Empate,oversample_16_reais
+x,o,x,b,o,o,x,o,x,O venceu,uci_real
+b,x,b,b,o,x,o,b,x,Tem jogo,gerado
+o,x,x,x,b,b,o,b,b,Tem jogo,gerado
+x,x,b,b,o,b,x,o,b,Tem jogo,gerado
+o,x,x,o,x,x,o,o,b,O venceu,uci_real
+o,b,x,b,o,x,b,x,o,O venceu,uci_real
+b,o,b,o,b,x,x,x,b,Tem jogo,gerado
+o,o,x,o,o,x,x,x,x,X venceu,uci_real
+o,x,x,x,o,o,o,x,x,Empate,oversample_16_reais
+x,b,x,o,o,b,b,o,x,Tem jogo,gerado
