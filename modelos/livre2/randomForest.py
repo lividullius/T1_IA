@@ -93,5 +93,61 @@ def main():
             exportar_modelo(modelo)
 
 
+def avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste):
+
+	resultados = {}
+
+	for nome, features, classes in (
+		("Validação", xValidacao, yValidacao),
+		("Teste", xTeste, yTeste),
+	):
+		previsoes = modelo.predict(features)
+
+		resultados[nome] = {
+			"Acurácia": accuracy_score(classes, previsoes),
+			"Precisão": precision_score(classes, previsoes, average="weighted"),
+			"Recall": recall_score(classes, previsoes, average="weighted"),
+			"F-measure": f1_score(classes, previsoes, average="weighted"),
+		}
+
+	return resultados
+
+def executar(abordagem):
+
+    xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
+    resultados = []
+
+    for arvores in [10, 25, 50, 100, 150, 200]:
+        for profundidade in [3, 5, 7, 10, None]:
+            for folha in [1, 2, 4]:
+
+                modelo = RandomForestClassifier(
+                    n_estimators=arvores,
+                    max_depth=profundidade,
+                    min_samples_leaf=folha,
+                    random_state=42,
+                )
+
+                modelo.fit(xTreino, yTreino)
+                previsoes = modelo.predict(xValidacao)
+                acuracia = accuracy_score(yValidacao, previsoes)
+                resultados.append(
+                    (arvores, profundidade, folha, acuracia)
+                )
+
+    resultados.sort(key=lambda r: r[3], reverse=True)
+    melhorArvores, melhorProfundidade, melhorFolha, melhorAcuracia = resultados[0]
+
+    modelo = RandomForestClassifier(
+        n_estimators=melhorArvores,
+        max_depth=melhorProfundidade,
+        min_samples_leaf=melhorFolha,
+        random_state=42,
+    )
+    modelo.fit(xTreino, yTreino)
+
+    return avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste,)
+
+
 if __name__ == "__main__":
     main()

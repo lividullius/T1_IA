@@ -94,6 +94,58 @@ def main():
 		if abordagem == "ab2":
 			exportar_modelo(mlp, normalizador_X)
 
+def avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste):
+
+	resultados = {}
+
+	for nome, features, classes in (
+		("Validação", xValidacao, yValidacao),
+		("Teste", xTeste, yTeste),
+	):
+		previsoes = modelo.predict(features)
+
+		resultados[nome] = {
+			"Acurácia": accuracy_score(classes, previsoes),
+			"Precisão": precision_score(classes, previsoes, average="weighted"),
+			"Recall": recall_score(classes, previsoes, average="weighted"),
+			"F-measure": f1_score(classes, previsoes, average="weighted"),
+		}
+
+	return resultados
+
+def executar(abordagem):
+
+	xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
+
+	normalizador_X = StandardScaler()
+	xTreino = normalizador_X.fit_transform(xTreino)
+	xValidacao = normalizador_X.transform(xValidacao)
+	xTeste = normalizador_X.transform(xTeste)
+
+	resultados = []
+
+	for camadas in [(10,), (20,), (50,)]:
+		for taxa in [0.001, 0.01]:
+			mlp = MLPClassifier(
+				hidden_layer_sizes=camadas, activation="logistic", solver="adam",
+				learning_rate_init=taxa, max_iter=3000, random_state=42,
+			)
+			mlp.fit(xTreino, yTreino)
+			previsoes = mlp.predict(xValidacao)
+			acuracia = accuracy_score(yValidacao, previsoes)
+			resultados.append((camadas, taxa, acuracia))
+
+	resultados.sort(key=lambda r: r[2], reverse=True)
+	melhorCamadas, melhorTaxa, melhorAcuracia = resultados[0]
+
+	mlp = MLPClassifier(
+		hidden_layer_sizes=melhorCamadas, activation="logistic", solver="adam",
+		learning_rate_init=melhorTaxa, max_iter=3000, random_state=42,
+	)
+	mlp.fit(xTreino, yTreino)
+
+	return avaliar_modelo(mlp, xValidacao, yValidacao, xTeste, yTeste)
+
 
 if __name__ == "__main__":
 	main()

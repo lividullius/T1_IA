@@ -89,6 +89,61 @@ def main():
 		if abordagem == "ab2":
 			exportar_modelo(modelo, normalizador_X)
 
+def avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste):
+
+	resultados = {}
+
+	for nome, features, classes in (
+		("Validação", xValidacao, yValidacao),
+		("Teste", xTeste, yTeste),
+	):
+		previsoes = modelo.predict(features)
+
+		resultados[nome] = {
+			"Acurácia": accuracy_score(classes, previsoes),
+			"Precisão": precision_score(classes, previsoes, average="weighted"),
+			"Recall": recall_score(classes, previsoes, average="weighted"),
+			"F-measure": f1_score(classes, previsoes, average="weighted"),
+		}
+
+	return resultados
+
+def executar(abordagem):
+
+    xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
+    normalizador_X = StandardScaler()
+    xTreino = normalizador_X.fit_transform(xTreino)
+    xValidacao = normalizador_X.transform(xValidacao)
+    xTeste = normalizador_X.transform(xTeste)
+    resultados = []
+
+    for C in [0.1, 1, 10, 100]:
+        for kernel in ["linear", "rbf"]:
+
+            modelo = SVC(
+                C=C,
+                kernel=kernel,
+                random_state=42,
+            )
+
+            modelo.fit(xTreino, yTreino)
+            previsoes = modelo.predict(xValidacao)
+            acuracia = accuracy_score(yValidacao, previsoes)
+            resultados.append((C, kernel, acuracia))
+
+    resultados.sort(key=lambda r: r[2], reverse=True)
+    melhorC, melhorKernel, melhorAcuracia = resultados[0]
+
+    modelo = SVC(
+        C=melhorC,
+        kernel=melhorKernel,
+        random_state=42,
+    )
+
+    modelo.fit(xTreino, yTreino)
+
+    return avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste,)
+
 
 if __name__ == "__main__":
 	main()

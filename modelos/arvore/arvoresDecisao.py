@@ -82,6 +82,54 @@ def main():
         if abordagem == "ab2":
             exportar_modelo(modelo)
 
+def avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste):
+
+	resultados = {}
+
+	for nome, features, classes in (
+		("Validação", xValidacao, yValidacao),
+		("Teste", xTeste, yTeste),
+	):
+		previsoes = modelo.predict(features)
+
+		resultados[nome] = {
+			"Acurácia": accuracy_score(classes, previsoes),
+			"Precisão": precision_score(classes, previsoes, average="weighted"),
+			"Recall": recall_score(classes, previsoes, average="weighted"),
+			"F-measure": f1_score(classes, previsoes, average="weighted"),
+		}
+
+	return resultados
+
+def executar(abordagem):
+
+    xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
+    resultados = []
+
+    for profundidade in range(1, 11):
+        modelo = DecisionTreeClassifier(
+            criterion="gini",
+            max_depth=profundidade,
+            random_state=42,
+        )
+
+        modelo.fit(xTreino, yTreino)
+        previsoes = modelo.predict(xValidacao)
+        acuracia = accuracy_score(yValidacao, previsoes)
+        resultados.append((profundidade, acuracia))
+
+    resultados.sort(key=lambda r: r[1], reverse=True)
+    melhorProfundidade, melhorAcuracia = resultados[0]
+
+    modelo = DecisionTreeClassifier(
+        criterion="gini",
+        max_depth=melhorProfundidade,
+        random_state=42,
+    )
+    modelo.fit(xTreino, yTreino)
+
+    return avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste,)
+
 
 if __name__ == "__main__":
     main()
