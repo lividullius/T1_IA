@@ -31,6 +31,7 @@ modelos/
   arvore/  knn/  mlp/  livre1/ (SVM)  livre2/ (Random Forest)
   testar_inferencia.py
 frontend/
+  jogo.py       jogo no terminal (humano contra a máquina aleatória)
 ```
 
 ## Como rodar
@@ -46,7 +47,7 @@ python3 dividir_dataset.py     # -> processed/ab1_*.csv e ab2_*.csv
 - `ab1`: 9 features, uma por casa (`x`=1, `o`=-1, `b`=0)
 - `ab2`: 7 features derivadas (contagens e linhas com 2 peças)
 
-Treinar os modelos (cada um salva `modelo_ab2.joblib` na própria pasta):
+Treinar os modelos. Cada script testa as duas abordagens e salva `modelo_ab1.joblib` e `modelo_ab2.joblib` na própria pasta. Esses arquivos não entram no repositório:
 
 ```bash
 python3 modelos/knn/knn.py
@@ -56,8 +57,14 @@ python3 modelos/livre1/svm.py
 python3 modelos/livre2/randomForest.py
 ```
 
-Testar a inferência dos modelos treinados:
+Testar a inferência dos modelos treinados (abordagem 2):
 
 ```bash
 python3 modelos/testar_inferencia.py
+```
+
+Jogar no terminal. O jogo pede o algoritmo e a abordagem; a IA classifica o estado a cada jogada:
+
+```bash
+python3 frontend/jogo.py
 ```
