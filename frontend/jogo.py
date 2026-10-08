@@ -9,7 +9,7 @@ sys.path.insert(0, str(RAIZ / "dataset"))
 
 try:
     from explorar_dataset import has_win
-    from preprocessamento import codificar_abordagem2
+    from preprocessamento import codificar_abordagem1, codificar_abordagem2
 except ModuleNotFoundError:
     print("Não foi possível carregar os módulos do projeto.")
     print("Rode a partir da pasta do projeto:")
@@ -22,6 +22,11 @@ ALGORITMOS = (
     ("3", "Árvore de decisão", "modelos.arvore.arvoresDecisao", "modelos/arvore/arvoresDecisao.py"),
     ("4", "SVM", "modelos.livre1.svm", "modelos/livre1/svm.py"),
     ("5", "Random Forest", "modelos.livre2.randomForest", "modelos/livre2/randomForest.py"),
+)
+
+ABORDAGENS = (
+    ("1", "ab1", "abordagem 1 - 9 casas do tabuleiro", codificar_abordagem1),
+    ("2", "ab2", "abordagem 2 - 7 atributos derivados", codificar_abordagem2),
 )
 
 
@@ -46,6 +51,21 @@ def escolher_algoritmo():
         print("  Escolha um número de 1 a 5.")
 
 
+def escolher_abordagem():
+    print()
+    print("  Escolha a abordagem")
+    for chave, _codigo, rotulo, _codificar in ABORDAGENS:
+        print(f"  {chave}. {rotulo}")
+    print()
+
+    while True:
+        texto = input("  Abordagem (1-2): ").strip()
+        for item in ABORDAGENS:
+            if texto == item[0]:
+                return item
+        print("  Escolha 1 ou 2.")
+
+
 def carregar_algoritmo(item):
     _chave, nome, modulo, script = item
     try:
@@ -56,13 +76,20 @@ def carregar_algoritmo(item):
         print("  pip install -r requirements.txt")
         print("  python frontend/jogo.py")
         raise SystemExit(1)
-    if not mod.MODEL_PATH.exists():
-        print(f"Modelo de {nome} não encontrado.")
-        print("Ele não vai no projeto. Na pasta do projeto, treine e rode de novo:")
+
+    _chave_ab, codigo, rotulo, codificar = escolher_abordagem()
+    if not mod.caminho_modelo(codigo).exists():
+        print(f"Modelo de {nome}, {rotulo}, não encontrado.")
+        print("O treino gera as duas abordagens e não vai no repositório.")
+        print("Na pasta do projeto:")
         print(f"  python {script}")
         print("  python frontend/jogo.py")
         raise SystemExit(1)
-    return nome, mod.inferir
+
+    def classificar(board):
+        return mod.inferir(codificar(board), codigo)
+
+    return f"{nome}, {rotulo}", classificar
 
 
 def estado_real(board):
@@ -173,7 +200,7 @@ def partida(acertos, erros, nome_ia, inferir):
             jogada = f"Máquina jogou na casa {casa + 1}."
 
         board[casa] = vez
-        previsto = inferir(codificar_abordagem2(board))
+        previsto = inferir(board)
         real = estado_real(board)
         acerto, texto_ia = avaliar(real, previsto)
         acertos += acerto

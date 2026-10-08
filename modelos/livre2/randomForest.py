@@ -6,11 +6,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 DATA_DIR = BASE_DIR / "dataset" / "processed"
-MODEL_PATH = BASE_DIR / "modelos" / "livre2" / "modelo_ab2.joblib"
-FEATURES_AB2 = [
-    "qtd_x", "qtd_o", "pos_ocupadas", "linhas_2x", "linhas_2o",
-    "casas_vazias", "vez",
-]
+MODEL_DIR = BASE_DIR / "modelos" / "livre2"
 
 def carregar_dados(abordagem):
     treino = pd.read_csv(DATA_DIR / f"{abordagem}_treino.csv")
@@ -24,25 +20,27 @@ def carregar_dados(abordagem):
     )
 
 
-def exportar_modelo(modelo):
-    MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
-    dump({"modelo": modelo, "features": FEATURES_AB2}, MODEL_PATH)
-    print(f"Modelo exportado para: {MODEL_PATH}")
+def caminho_modelo(abordagem):
+    return MODEL_DIR / f"modelo_{abordagem}.joblib"
 
 
-def carregar_modelo():
-    return load(MODEL_PATH)
+def exportar_modelo(modelo, abordagem, features):
+    caminho = caminho_modelo(abordagem)
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    dump({"modelo": modelo, "features": list(features)}, caminho)
+    print(f"Modelo exportado para: {caminho}")
 
 
-def inferir(features):
-    pacote = carregar_modelo()
-    entrada = pd.DataFrame([features], columns=FEATURES_AB2)
+def inferir(features, abordagem="ab2"):
+    pacote = load(caminho_modelo(abordagem))
+    entrada = pd.DataFrame([features], columns=pacote["features"])
     return pacote["modelo"].predict(entrada)[0]
 
 def main():
     for abordagem in ("ab1", "ab2"):
         print(f"\nIniciando Treino RandomForest - Abordagem: {abordagem}")
         xTreino, yTreino, xValidacao, yValidacao, xTeste, yTeste = carregar_dados(abordagem)
+        colunas = list(xTreino.columns)
 
         resultados = []
         for arvores in [10, 25, 50, 100, 150, 200]:
@@ -89,8 +87,7 @@ def main():
             print("Recall:", recall_score(classes, previsoes, average="weighted"))
             print("F-measure:", f1_score(classes, previsoes, average="weighted"))
 
-        if abordagem == "ab2":
-            exportar_modelo(modelo)
+        exportar_modelo(modelo, abordagem, colunas)
 
 
 def avaliar_modelo(modelo, xValidacao, yValidacao, xTeste, yTeste):
