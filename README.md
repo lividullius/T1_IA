@@ -29,6 +29,8 @@ dataset/
   dividir_dataset.py
 modelos/
   arvore/  knn/  mlp/  livre1/ (SVM)  livre2/ (Random Forest)
+                cada pasta tem o script do modelo e um analise.txt
+  comparacao.py         compara os 5 modelos (abordagem 2)
   testar_inferencia.py
 frontend/
   jogo.py       jogo no terminal (humano contra a máquina aleatória)
@@ -55,6 +57,17 @@ python3 modelos/mlp/mlp.py
 python3 modelos/arvore/arvoresDecisao.py
 python3 modelos/livre1/svm.py
 python3 modelos/livre2/randomForest.py
+```
+
+Cada pasta de modelo tem um `analise.txt` que explica como o algoritmo
+funciona e o pré-processamento usado.
+
+Comparar os 5 modelos na abordagem 2. Precisa rodar de dentro de `modelos/`:
+
+```bash
+cd modelos
+python3 comparacao.py
+cd ..
 ```
 
 Testar a inferência dos modelos treinados (abordagem 2):
